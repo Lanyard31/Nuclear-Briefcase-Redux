@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/exitgame.wav-d1ffd2d133dd7046f599565144ef5af5.sample"
+
+[deps]
+
+source_file="res://assets/sounds/exitgame.wav"
+source_md5="b8d99ff827143b2709238e8e0d674de1"
+
+dest_files=[ "res://.import/exitgame.wav-d1ffd2d133dd7046f599565144ef5af5.sample" ]
+dest_md5="07e34ac98f7f22eea51f67c2f3fc5379"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/player-loses.wav-8fddfce81c5b7250f84bf29659c59c55.sample"
+
+[deps]
+
+source_file="res://assets/sounds/player-loses.wav"
+source_md5="b521e0bc53ead1d4ebee04ded05e48b8"
+
+dest_files=[ "res://.import/player-loses.wav-8fddfce81c5b7250f84bf29659c59c55.sample" ]
+dest_md5="9a86693f616a6856024e46f54860a347"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

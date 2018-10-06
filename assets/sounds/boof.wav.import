@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/boof.wav-e42d7503ec09d54b33b978cfd8180582.sample"
+
+[deps]
+
+source_file="res://assets/sounds/boof.wav"
+source_md5="b2b191cc82eccfe24d590c0f19abd89a"
+
+dest_files=[ "res://.import/boof.wav-e42d7503ec09d54b33b978cfd8180582.sample" ]
+dest_md5="a68410fe4be7542f9b42f25bb79b4275"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

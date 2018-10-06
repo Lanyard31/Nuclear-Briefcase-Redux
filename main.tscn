@@ -1,29 +1,36 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://PlayerNuke.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/worldmap-09.png" type="Texture" id=3]
-[ext_resource path="res://PlayerCity.tscn" type="PackedScene" id=4]
+[ext_resource path="res://PlayerCity.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/worldmap-09.png" type="Texture" id=4]
 [ext_resource path="res://NPCity.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/cityicons/ICONS-14.png" type="Texture" id=6]
 [ext_resource path="res://assets/cityicons/ICONS-13.png" type="Texture" id=7]
 [ext_resource path="res://NPCNuke.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/sounds/boof.wav" type="AudioStream" id=9]
 
-[node name="Root" type="Node"]
+[sub_resource type="AudioStreamRandomPitch" id=1]
+
+audio_stream = ExtResource( 9 )
+random_pitch = 1.1
+
+[node name="Root" type="Node" index="0"]
 
 script = ExtResource( 1 )
 Nuke = ExtResource( 2 )
+City = ExtResource( 3 )
 
 [node name="Worldmap" type="Sprite" parent="." index="0"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 centered = false
 _sections_unfolded = [ "Offset" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="PlayerCity" parent="." index="1" instance=ExtResource( 4 )]
+[node name="PlayerCity" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 394.163, 340.717 )
 
@@ -61,6 +68,14 @@ _sections_unfolded = [ "Offset" ]
 [node name="NPCNuke" parent="." index="5" instance=ExtResource( 8 )]
 
 position = Vector2( 451.346, 267.573 )
+
+[node name="firemissile" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = SubResource( 1 )
+volume_db = -15.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="shoot" from="." to="." method="_on_missile_fire"]
 

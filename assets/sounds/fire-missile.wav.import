@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fire-missile.wav-ad3597fd30c1989da962318cf3a84f6c.sample"
+
+[deps]
+
+source_file="res://assets/sounds/fire-missile.wav"
+source_md5="645d66f8d8970fa7e3bb3cace35b1e60"
+
+dest_files=[ "res://.import/fire-missile.wav-ad3597fd30c1989da962318cf3a84f6c.sample" ]
+dest_md5="21d44a04c3979c2d103a90d26df75f70"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

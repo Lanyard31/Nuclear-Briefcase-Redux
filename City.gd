@@ -21,7 +21,7 @@ func take_damage(damage):
 		population = population - damage
 		HPpopnew = population
 #		str(_population) = population
-		print(population)
+#		print(population)
 		var printme = "Pop: %sk"
 		var printme2 = printme % population
 		$Pop_count.set_text(printme2)

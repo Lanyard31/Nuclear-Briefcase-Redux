@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/enter-war.wav-57997627c53202a789367f4ab58d9496.sample"
+
+[deps]
+
+source_file="res://assets/sounds/enter-war.wav"
+source_md5="a31d4d2a00042510748f2c58c8455d00"
+
+dest_files=[ "res://.import/enter-war.wav-57997627c53202a789367f4ab58d9496.sample" ]
+dest_md5="0e5d98b1319e8a7db2dc8881f5d19253"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
