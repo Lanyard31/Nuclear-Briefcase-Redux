@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://PlayerNuke.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/worldmap-04-01.png" type="Texture" id=3]
+[ext_resource path="res://assets/worldmap-09.png" type="Texture" id=3]
 [ext_resource path="res://PlayerCity.tscn" type="PackedScene" id=4]
 [ext_resource path="res://NPCity.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/cityicons/ICONS-14.png" type="Texture" id=6]
+[ext_resource path="res://assets/cityicons/ICONS-13.png" type="Texture" id=7]
+[ext_resource path="res://NPCNuke.tscn" type="PackedScene" id=8]
 
-[node name="Root" type="Node" index="0"]
+[node name="Root" type="Node"]
 
 script = ExtResource( 1 )
 Nuke = ExtResource( 2 )
@@ -41,9 +44,23 @@ position = Vector2( 467.524, 371.149 )
 
 position = Vector2( 1065.58, 185.39 )
 
+[node name="Sprite2" type="Sprite" parent="Nations/FINLAND" index="3"]
+
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Offset" ]
+
 [node name="france" parent="Nations" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 930.903, 295.58 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/france" index="5"]
+
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="NPCNuke" parent="." index="5" instance=ExtResource( 8 )]
+
+position = Vector2( 451.346, 267.573 )
 
 [connection signal="shoot" from="." to="." method="_on_missile_fire"]
 

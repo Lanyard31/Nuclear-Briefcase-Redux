@@ -21,14 +21,21 @@ __meta__ = {
 "_edit_group_": true
 }
 speed = null
-damage = null
+damage = 1000
 lifetime = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+_sections_unfolded = [ "Visibility" ]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+animation = "default"
+playing = true
 
 [connection signal="body_entered" from="." to="." method="_on_Nuke_body_entered"]
 

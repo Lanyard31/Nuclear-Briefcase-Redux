@@ -84,5 +84,5 @@ control=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"
 
 [rendering]
 
-environment/default_clear_color=Color( 0.0901961, 0.109804, 0.0980392, 1 )
+environment/default_clear_color=Color( 0.0392157, 0.0666667, 0.0627451, 1 )
 environment/default_environment="res://default_env.tres"

@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://City.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/icons_country.png" type="Texture" id=2]
+[ext_resource path="res://PlayerCity.gd" type="Script" id=2]
+[ext_resource path="res://assets/icons_country.png" type="Texture" id=3]
 
 [node name="PlayerCity" instance=ExtResource( 1 )]
 
-population = null
+script = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D" parent="." index="0"]
 
@@ -13,6 +15,7 @@ disabled = true
 
 [node name="Sprite" parent="." index="1"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
 
 

@@ -1,12 +1,16 @@
 extends Area2D
 
 export (int) var speed
-export (int) var damage
+export (int) var damage = 1000
 export (float) var lifetime
 var steer_force = 1
 
 var velocity = Vector2()
 
+func _ready():
+	randomize()
+	damage = round(damage * rand_range(0.8, 1.2))
+	return damage
 
 func start(_position, _direction):
 	position = _position
