@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://PlayerNuke.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/worldmap-04-01.png" type="Texture" id=3]
+[ext_resource path="res://PlayerCity.tscn" type="PackedScene" id=4]
+[ext_resource path="res://NPCity.tscn" type="PackedScene" id=5]
+
+[node name="Root" type="Node" index="0"]
+
+script = ExtResource( 1 )
+Nuke = ExtResource( 2 )
+
+[node name="Worldmap" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 3 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PlayerCity" parent="." index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 394.163, 340.717 )
+
+[node name="GunTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="PlayerNuke" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 467.524, 371.149 )
+
+[node name="Nations" type="Node" parent="." index="4"]
+
+[node name="FINLAND" parent="Nations" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 1065.58, 185.39 )
+
+[node name="france" parent="Nations" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 930.903, 295.58 )
+
+[connection signal="shoot" from="." to="." method="_on_missile_fire"]
+
+

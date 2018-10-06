@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Nuke.tscn" type="PackedScene" id=1]
+[ext_resource path="res://PlayerNuke.gd" type="Script" id=2]
+[ext_resource path="res://assets/icons_missile.png" type="Texture" id=3]
+
+[node name="PlayerNuke" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+speed = 40
+damage = 1000
+lifetime = 5.0
+
+[node name="Sprite" parent="." index="0"]
+
+modulate = Color( 0.03125, 1, 0, 1 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://City.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/icons_country.png" type="Texture" id=2]
+
+[node name="NPCity" instance=ExtResource( 1 )]
+
+population = null
+
+[node name="Sprite" parent="." index="1"]
+
+modulate = Color( 0.237839, 0.250368, 0.558594, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+
