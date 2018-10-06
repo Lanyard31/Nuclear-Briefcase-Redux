@@ -50,6 +50,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="AnimatedSprite" parent="." index="2"]
 
 frames = SubResource( 1 )
-frame = 3
+frame = 14
 
 

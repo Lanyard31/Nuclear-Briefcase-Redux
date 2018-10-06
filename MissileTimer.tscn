@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="MissileTimer" type="Timer"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+

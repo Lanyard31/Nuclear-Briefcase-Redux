@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Nuclear Ballet.ogg-94b2cfe41c515784cd893b82212446ce.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/Nuclear Ballet.ogg"
+source_md5="85eb11f20ddf78fad4f2abba3eb4e1c0"
+
+dest_files=[ "res://.import/Nuclear Ballet.ogg-94b2cfe41c515784cd893b82212446ce.oggstr" ]
+dest_md5="f6f4d3e4ea83f36bbfd115859992055a"
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://City.gd" type="Script" id=1]
 [ext_resource path="res://assets/cityicons/ICONS-13.png" type="Texture" id=2]
 [ext_resource path="res://assets/icons_country.png" type="Texture" id=3]
+[ext_resource path="res://assets/sounds/explosion.wav" type="AudioStream" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+radius = 10.0
 
 [node name="City" type="StaticBody2D"]
 
@@ -20,11 +21,14 @@ friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 population = 10000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.3, 0.3 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -89,6 +93,14 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "custom_fonts" ]
+
+[node name="Kaboom" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 4 )
+volume_db = -6.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="progress_update" from="." to="." method="_update_progress"]
 

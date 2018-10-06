@@ -6,7 +6,7 @@ signal game_over
 var gameovercheck = false
 
 func _ready():
-	pass
+	population = (population * 1.5)
 
 func _process(delta):
 	if population <= 0 and gameovercheck == false:

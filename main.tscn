@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://PlayerNuke.tscn" type="PackedScene" id=2]
@@ -9,16 +9,54 @@
 [ext_resource path="res://assets/cityicons/ICONS-03.png" type="Texture" id=7]
 [ext_resource path="res://assets/cityicons/ICONS-06.png" type="Texture" id=8]
 [ext_resource path="res://assets/cityicons/ICONS-05.png" type="Texture" id=9]
-[ext_resource path="res://assets/cityicons/ICONS-13.png" type="Texture" id=10]
-[ext_resource path="res://assets/cityicons/ICONS-14.png" type="Texture" id=11]
-[ext_resource path="res://assets/cityicons/ICONS-54.png" type="Texture" id=12]
-[ext_resource path="res://assets/cityicons/ICONS-53.png" type="Texture" id=13]
-[ext_resource path="res://assets/cityicons/ICONS-37.png" type="Texture" id=14]
-[ext_resource path="res://assets/sounds/boof.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/cityicons/ICONS-14.png" type="Texture" id=10]
+[ext_resource path="res://assets/cityicons/ICONS-13.png" type="Texture" id=11]
+[ext_resource path="res://assets/cityicons/ICONS-08.png" type="Texture" id=12]
+[ext_resource path="res://assets/cityicons/ICONS-07.png" type="Texture" id=13]
+[ext_resource path="res://assets/cityicons/ICONS-10.png" type="Texture" id=14]
+[ext_resource path="res://assets/cityicons/ICONS-09.png" type="Texture" id=15]
+[ext_resource path="res://assets/cityicons/ICONS-12.png" type="Texture" id=16]
+[ext_resource path="res://assets/cityicons/ICONS-11.png" type="Texture" id=17]
+[ext_resource path="res://assets/cityicons/ICONS-16.png" type="Texture" id=18]
+[ext_resource path="res://assets/cityicons/ICONS-15.png" type="Texture" id=19]
+[ext_resource path="res://assets/cityicons/ICONS-18.png" type="Texture" id=20]
+[ext_resource path="res://assets/cityicons/ICONS-17.png" type="Texture" id=21]
+[ext_resource path="res://assets/cityicons/ICONS-20.png" type="Texture" id=22]
+[ext_resource path="res://assets/cityicons/ICONS-19.png" type="Texture" id=23]
+[ext_resource path="res://assets/cityicons/ICONS-22.png" type="Texture" id=24]
+[ext_resource path="res://assets/cityicons/ICONS-21.png" type="Texture" id=25]
+[ext_resource path="res://assets/cityicons/ICONS-24.png" type="Texture" id=26]
+[ext_resource path="res://assets/cityicons/ICONS-23.png" type="Texture" id=27]
+[ext_resource path="res://assets/cityicons/ICONS-26.png" type="Texture" id=28]
+[ext_resource path="res://assets/cityicons/ICONS-25.png" type="Texture" id=29]
+[ext_resource path="res://assets/cityicons/ICONS-28.png" type="Texture" id=30]
+[ext_resource path="res://assets/cityicons/ICONS-27.png" type="Texture" id=31]
+[ext_resource path="res://assets/cityicons/ICONS-30.png" type="Texture" id=32]
+[ext_resource path="res://assets/cityicons/ICONS-29.png" type="Texture" id=33]
+[ext_resource path="res://assets/cityicons/ICONS-32.png" type="Texture" id=34]
+[ext_resource path="res://assets/cityicons/ICONS-34.png" type="Texture" id=35]
+[ext_resource path="res://assets/cityicons/ICONS-33.png" type="Texture" id=36]
+[ext_resource path="res://assets/cityicons/ICONS-36.png" type="Texture" id=37]
+[ext_resource path="res://assets/cityicons/ICONS-38.png" type="Texture" id=38]
+[ext_resource path="res://assets/cityicons/ICONS-40.png" type="Texture" id=39]
+[ext_resource path="res://assets/cityicons/ICONS-39.png" type="Texture" id=40]
+[ext_resource path="res://assets/cityicons/ICONS-42.png" type="Texture" id=41]
+[ext_resource path="res://assets/cityicons/ICONS-41.png" type="Texture" id=42]
+[ext_resource path="res://assets/cityicons/ICONS-44.png" type="Texture" id=43]
+[ext_resource path="res://assets/cityicons/ICONS-43.png" type="Texture" id=44]
+[ext_resource path="res://assets/cityicons/ICONS-46.png" type="Texture" id=45]
+[ext_resource path="res://assets/cityicons/ICONS-45.png" type="Texture" id=46]
+[ext_resource path="res://assets/cityicons/ICONS-52.png" type="Texture" id=47]
+[ext_resource path="res://assets/cityicons/ICONS-54.png" type="Texture" id=48]
+[ext_resource path="res://assets/cityicons/ICONS-53.png" type="Texture" id=49]
+[ext_resource path="res://assets/cityicons/ICONS-37.png" type="Texture" id=50]
+[ext_resource path="res://assets/sounds/boof.wav" type="AudioStream" id=51]
+[ext_resource path="res://assets/sounds/player-loses.wav" type="AudioStream" id=52]
+[ext_resource path="res://assets/sounds/Nuclear Ballet.ogg" type="AudioStream" id=53]
 
 [sub_resource type="AudioStreamRandomPitch" id=1]
 
-audio_stream = ExtResource( 15 )
+audio_stream = ExtResource( 51 )
 random_pitch = 1.1
 
 [node name="Root" type="Node" index="0"]
@@ -46,20 +84,22 @@ autostart = false
 
 [node name="Nations" type="Node" parent="." index="2"]
 
-[node name="ALGERIA" parent="Nations" index="0" instance=ExtResource( 5 )]
+editor/display_folded = true
 
-position = Vector2( 959.987, 441.7 )
+[node name="algeria" parent="Nations" index="0" instance=ExtResource( 5 )]
 
-[node name="Sprite2" type="Sprite" parent="Nations/ALGERIA" index="3"]
+position = Vector2( 1601.54, 767.462 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/algeria" index="3"]
 
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="australia" parent="Nations" index="1" instance=ExtResource( 5 )]
+[node name="AUSTRALIA" parent="Nations" index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 1598.06, 765.698 )
+position = Vector2( 935.451, 432.179 )
 
-[node name="Sprite2" type="Sprite" parent="Nations/australia" index="3"]
+[node name="Sprite2" type="Sprite" parent="Nations/AUSTRALIA" index="3"]
 
 texture = ExtResource( 7 )
 _sections_unfolded = [ "Offset" ]
@@ -75,56 +115,380 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="BURKINA_FASO" parent="Nations" index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 878.762, 552.707 )
+position = Vector2( 848.616, 521.053 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/BURKINA_FASO" index="3"]
 
 texture = ExtResource( 9 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="france" parent="Nations" index="4" instance=ExtResource( 5 )]
-
-position = Vector2( 930.903, 295.58 )
-
-[node name="Sprite2" type="Sprite" parent="Nations/france" index="5"]
-
-texture = ExtResource( 10 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="FINLAND" parent="Nations" index="5" instance=ExtResource( 5 )]
+[node name="FINLAND" parent="Nations" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 1065.58, 185.39 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/FINLAND" index="3"]
 
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="france" parent="Nations" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 908.239, 350.487 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/france" index="3"]
+
 texture = ExtResource( 11 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="ZAMBIA" parent="Nations" index="6" instance=ExtResource( 5 )]
+[node name="CHINA" parent="Nations" index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 1442.41, 417.52 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/CHINA" index="3"]
+
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="chile" parent="Nations" index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 554.592, 827.517 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/chile" index="3"]
+
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="DENMARK" parent="Nations" index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 970.073, 261.413 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/DENMARK" index="3"]
+
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="dominican_republic" parent="Nations" index="9" instance=ExtResource( 5 )]
+
+position = Vector2( 511.202, 490.113 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/dominican_republic" index="3"]
+
+texture = ExtResource( 15 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="EGYPT" parent="Nations" index="10" instance=ExtResource( 5 )]
+
+position = Vector2( 1053.1, 456.998 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/EGYPT" index="3"]
+
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="england" parent="Nations" index="11" instance=ExtResource( 5 )]
+
+position = Vector2( 875.438, 279.338 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/england" index="3"]
+
+texture = ExtResource( 17 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="GERMANY" parent="Nations" index="12" instance=ExtResource( 5 )]
+
+position = Vector2( 963.081, 319.749 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/GERMANY" index="3"]
+
+texture = ExtResource( 18 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="ghana" parent="Nations" index="13" instance=ExtResource( 5 )]
+
+position = Vector2( 892.236, 563.732 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/ghana" index="3"]
+
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="HONDURAS" parent="Nations" index="14" instance=ExtResource( 5 )]
+
+position = Vector2( 444.037, 528.808 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/HONDURAS" index="3"]
+
+texture = ExtResource( 20 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="hungary" parent="Nations" index="15" instance=ExtResource( 5 )]
+
+position = Vector2( 1019.84, 309.666 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/hungary" index="3"]
+
+texture = ExtResource( 21 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="INDIA" parent="Nations" index="16" instance=ExtResource( 5 )]
+
+position = Vector2( 1306.08, 494.962 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/INDIA" index="3"]
+
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="israel" parent="Nations" index="17" instance=ExtResource( 5 )]
+
+position = Vector2( 1087.92, 420.904 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/israel" index="3"]
+
+texture = ExtResource( 23 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="JAMAICA" parent="Nations" index="18" instance=ExtResource( 5 )]
+
+position = Vector2( 545.135, 537.679 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/JAMAICA" index="3"]
+
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="japan" parent="Nations" index="19" instance=ExtResource( 5 )]
+
+position = Vector2( 1622.26, 385.779 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/japan" index="3"]
+
+texture = ExtResource( 25 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="KOREA" parent="Nations" index="20" instance=ExtResource( 5 )]
+
+position = Vector2( 1562.4, 389.86 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/KOREA" index="3"]
+
+texture = ExtResource( 26 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="kazakhstan" parent="Nations" index="21" instance=ExtResource( 5 )]
+
+position = Vector2( 1342.19, 360.98 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/kazakhstan" index="3"]
+
+texture = ExtResource( 27 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="LESOTHO" parent="Nations" index="22" instance=ExtResource( 5 )]
+
+position = Vector2( 1029.02, 798.693 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/LESOTHO" index="3"]
+
+texture = ExtResource( 28 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="lithuania" parent="Nations" index="23" instance=ExtResource( 5 )]
+
+position = Vector2( 1047.98, 251.778 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/lithuania" index="3"]
+
+texture = ExtResource( 29 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="MADAGASCAR" parent="Nations" index="24" instance=ExtResource( 5 )]
+
+position = Vector2( 1147.25, 742.738 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/MADAGASCAR" index="3"]
+
+texture = ExtResource( 30 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="mexico" parent="Nations" index="25" instance=ExtResource( 5 )]
+
+position = Vector2( 372.574, 464.853 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/mexico" index="3"]
+
+texture = ExtResource( 31 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="NEW_ZEALAND" parent="Nations" index="26" instance=ExtResource( 5 )]
+
+position = Vector2( 1793.28, 886.863 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/NEW_ZEALAND" index="3"]
+
+texture = ExtResource( 32 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="norway" parent="Nations" index="27" instance=ExtResource( 5 )]
+
+position = Vector2( 962.256, 202.099 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/norway" index="3"]
+
+texture = ExtResource( 33 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="OMAN" parent="Nations" index="28" instance=ExtResource( 5 )]
+
+position = Vector2( 1201.59, 495.727 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/OMAN" index="3"]
+
+texture = ExtResource( 34 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="PAKISTAN" parent="Nations" index="29" instance=ExtResource( 5 )]
+
+position = Vector2( 1245.91, 442.542 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/PAKISTAN" index="3"]
+
+texture = ExtResource( 35 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="panama" parent="Nations" index="30" instance=ExtResource( 5 )]
+
+position = Vector2( 489.126, 578.83 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/panama" index="3"]
+
+texture = ExtResource( 36 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="QATAR" parent="Nations" index="31" instance=ExtResource( 5 )]
+
+position = Vector2( 1095.38, 535.888 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/QATAR" index="3"]
+
+texture = ExtResource( 37 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="ROMANIA" parent="Nations" index="32" instance=ExtResource( 5 )]
+
+position = Vector2( 1042.03, 358.331 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/ROMANIA" index="3"]
+
+texture = ExtResource( 38 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="SAUDI_ARABIA" parent="Nations" index="33" instance=ExtResource( 5 )]
+
+position = Vector2( 1136.22, 463.594 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/SAUDI_ARABIA" index="3"]
+
+texture = ExtResource( 39 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="switzerland" parent="Nations" index="34" instance=ExtResource( 5 )]
+
+position = Vector2( 970.217, 367.594 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/switzerland" index="3"]
+
+texture = ExtResource( 40 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="THAILAND" parent="Nations" index="35" instance=ExtResource( 5 )]
+
+position = Vector2( 1435.22, 529.594 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/THAILAND" index="3"]
+
+texture = ExtResource( 41 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="turkey" parent="Nations" index="36" instance=ExtResource( 5 )]
+
+position = Vector2( 1091.06, 370.698 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/turkey" index="3"]
+
+texture = ExtResource( 42 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="UKRAINE" parent="Nations" index="37" instance=ExtResource( 5 )]
+
+position = Vector2( 1255.22, 264.594 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/UKRAINE" index="3"]
+
+texture = ExtResource( 43 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="united_states" parent="Nations" index="38" instance=ExtResource( 5 )]
+
+position = Vector2( 387.217, 387.594 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/united_states" index="3"]
+
+texture = ExtResource( 44 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="VENEZUELA" parent="Nations" index="39" instance=ExtResource( 5 )]
+
+position = Vector2( 508.217, 644.594 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/VENEZUELA" index="3"]
+
+texture = ExtResource( 45 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="vietnam" parent="Nations" index="40" instance=ExtResource( 5 )]
+
+position = Vector2( 1478.22, 489.594 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/vietnam" index="3"]
+
+texture = ExtResource( 46 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="YEMEN" parent="Nations" index="41" instance=ExtResource( 5 )]
+
+position = Vector2( 1146.22, 540.594 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/YEMEN" index="3"]
+
+texture = ExtResource( 47 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="ZAMBIA" parent="Nations" index="42" instance=ExtResource( 5 )]
 
 position = Vector2( 1032.72, 676.063 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/ZAMBIA" index="3"]
 
-texture = ExtResource( 12 )
+texture = ExtResource( 48 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="zimbabwe" parent="Nations" index="7" instance=ExtResource( 5 )]
+[node name="zimbabwe" parent="Nations" index="43" instance=ExtResource( 5 )]
 
 position = Vector2( 1063.2, 728.563 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/zimbabwe" index="3"]
 
-texture = ExtResource( 13 )
+texture = ExtResource( 49 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="russia" parent="Nations" index="8" instance=ExtResource( 5 )]
+[node name="russia" parent="Nations" index="44" instance=ExtResource( 5 )]
 
 position = Vector2( 1418.46, 259.395 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/russia" index="3"]
 
-texture = ExtResource( 14 )
+texture = ExtResource( 50 )
 _sections_unfolded = [ "Offset" ]
 
 [node name="firemissile" type="AudioStreamPlayer" parent="." index="3"]
@@ -135,10 +499,101 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="self_nuke" type="Label" parent="." index="4"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 607.0
+margin_top = 863.0
+margin_right = 732.0
+margin_bottom = 877.0
+rect_scale = Vector2( 6, 6 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "You nuked yourself."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="playerloss" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 52 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="ballet" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 53 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="ballettimer" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="selfnuketimer" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 8.0
+one_shot = true
+autostart = false
+
+[node name="doomsdaytimer" type="Timer" parent="." index="9"]
+
+process_mode = 1
+wait_time = 12.0
+one_shot = false
+autostart = false
+
+[node name="youwin" type="Label" parent="." index="10"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 217.0
+margin_top = 735.0
+margin_right = 319.0
+margin_bottom = 749.0
+rect_scale = Vector2( 1.2, 1.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "you win i guess"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
 [connection signal="redshoot" from="." to="." method="_on_redshoot"]
 
 [connection signal="shoot" from="." to="." method="_on_missile_fire"]
 
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
+
+[connection signal="timeout" from="ballettimer" to="." method="_on_ballettimer_timeout"]
+
+[connection signal="timeout" from="selfnuketimer" to="." method="_on_selfnuketimer_timeout"]
+
+[connection signal="timeout" from="doomsdaytimer" to="." method="_on_doomsdaytimer_timeout"]
 
 
