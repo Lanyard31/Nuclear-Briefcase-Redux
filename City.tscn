@@ -24,7 +24,9 @@ population = 10000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
+scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 

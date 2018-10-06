@@ -45,7 +45,6 @@ animations = [ {
 
 script = ExtResource( 2 )
 speed = 40
-damage = 1000
 lifetime = 5.0
 
 [node name="Sprite" parent="." index="0"]
@@ -59,7 +58,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
-frame = 3
+frame = 14
 _sections_unfolded = [ "Transform" ]
 
 

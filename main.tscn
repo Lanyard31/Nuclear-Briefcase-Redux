@@ -1,18 +1,24 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://PlayerNuke.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PlayerCity.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/worldmap-09.png" type="Texture" id=4]
 [ext_resource path="res://NPCity.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/cityicons/ICONS-14.png" type="Texture" id=6]
-[ext_resource path="res://assets/cityicons/ICONS-13.png" type="Texture" id=7]
-[ext_resource path="res://NPCNuke.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/sounds/boof.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/cityicons/ICONS-04.png" type="Texture" id=6]
+[ext_resource path="res://assets/cityicons/ICONS-03.png" type="Texture" id=7]
+[ext_resource path="res://assets/cityicons/ICONS-06.png" type="Texture" id=8]
+[ext_resource path="res://assets/cityicons/ICONS-05.png" type="Texture" id=9]
+[ext_resource path="res://assets/cityicons/ICONS-13.png" type="Texture" id=10]
+[ext_resource path="res://assets/cityicons/ICONS-14.png" type="Texture" id=11]
+[ext_resource path="res://assets/cityicons/ICONS-54.png" type="Texture" id=12]
+[ext_resource path="res://assets/cityicons/ICONS-53.png" type="Texture" id=13]
+[ext_resource path="res://assets/cityicons/ICONS-37.png" type="Texture" id=14]
+[ext_resource path="res://assets/sounds/boof.wav" type="AudioStream" id=15]
 
 [sub_resource type="AudioStreamRandomPitch" id=1]
 
-audio_stream = ExtResource( 9 )
+audio_stream = ExtResource( 15 )
 random_pitch = 1.1
 
 [node name="Root" type="Node" index="0"]
@@ -23,53 +29,105 @@ City = ExtResource( 3 )
 
 [node name="Worldmap" type="Sprite" parent="." index="0"]
 
+z_index = -2
 texture = ExtResource( 4 )
 centered = false
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="PlayerCity" parent="." index="1" instance=ExtResource( 3 )]
-
-position = Vector2( 394.163, 340.717 )
-
-[node name="GunTimer" type="Timer" parent="." index="2"]
+[node name="GunTimer" type="Timer" parent="." index="1"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 0.3
 one_shot = false
 autostart = false
 
-[node name="PlayerNuke" parent="." index="3" instance=ExtResource( 2 )]
+[node name="Nations" type="Node" parent="." index="2"]
 
-position = Vector2( 467.524, 371.149 )
+[node name="ALGERIA" parent="Nations" index="0" instance=ExtResource( 5 )]
 
-[node name="Nations" type="Node" parent="." index="4"]
+position = Vector2( 959.987, 441.7 )
 
-[node name="FINLAND" parent="Nations" index="0" instance=ExtResource( 5 )]
-
-position = Vector2( 1065.58, 185.39 )
-
-[node name="Sprite2" type="Sprite" parent="Nations/FINLAND" index="3"]
+[node name="Sprite2" type="Sprite" parent="Nations/ALGERIA" index="3"]
 
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="france" parent="Nations" index="1" instance=ExtResource( 5 )]
+[node name="australia" parent="Nations" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 1598.06, 765.698 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/australia" index="3"]
+
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="brazil" parent="Nations" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 666.675, 665.52 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/brazil" index="3"]
+
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="BURKINA_FASO" parent="Nations" index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 878.762, 552.707 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/BURKINA_FASO" index="3"]
+
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="france" parent="Nations" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 930.903, 295.58 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/france" index="5"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="NPCNuke" parent="." index="5" instance=ExtResource( 8 )]
+[node name="FINLAND" parent="Nations" index="5" instance=ExtResource( 5 )]
 
-position = Vector2( 451.346, 267.573 )
+position = Vector2( 1065.58, 185.39 )
 
-[node name="firemissile" type="AudioStreamPlayer" parent="." index="6"]
+[node name="Sprite2" type="Sprite" parent="Nations/FINLAND" index="3"]
+
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="ZAMBIA" parent="Nations" index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 1032.72, 676.063 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/ZAMBIA" index="3"]
+
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="zimbabwe" parent="Nations" index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 1063.2, 728.563 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/zimbabwe" index="3"]
+
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="russia" parent="Nations" index="8" instance=ExtResource( 5 )]
+
+position = Vector2( 1418.46, 259.395 )
+
+[node name="Sprite2" type="Sprite" parent="Nations/russia" index="3"]
+
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="firemissile" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = SubResource( 1 )
 volume_db = -15.0
@@ -77,6 +135,10 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
+[connection signal="redshoot" from="." to="." method="_on_redshoot"]
+
 [connection signal="shoot" from="." to="." method="_on_missile_fire"]
+
+[connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
 
 

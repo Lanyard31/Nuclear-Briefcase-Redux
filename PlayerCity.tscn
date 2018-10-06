@@ -1,13 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://City.tscn" type="PackedScene" id=1]
 [ext_resource path="res://PlayerCity.gd" type="Script" id=2]
-[ext_resource path="res://assets/icons_country.png" type="Texture" id=3]
+[ext_resource path="res://Player_Collision.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameOverScreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/icons_country.png" type="Texture" id=5]
+[ext_resource path="res://assets/sounds/player-loses.wav" type="AudioStream" id=6]
 
-[node name="PlayerCity" instance=ExtResource( 1 )]
+[sub_resource type="AudioStreamRandomPitch" id=1]
 
+audio_stream = ExtResource( 6 )
+random_pitch = 1.1
+
+[node name="PlayerCity" groups=[
+"player",
+] instance=ExtResource( 1 )]
+
+z_index = -1
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+Player_Collision = ExtResource( 3 )
+gameoverscreen = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="." index="0"]
 
@@ -15,7 +28,63 @@ disabled = true
 
 [node name="Sprite" parent="." index="1"]
 
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Visibility" ]
+
+[node name="HP" parent="." index="3"]
+
+hint_tooltip = "This is you."
+_sections_unfolded = [ "Anchor", "Hint", "Margin", "Rect", "Textures", "Visibility" ]
+
+[node name="Collisionstart" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 0.05
+one_shot = true
+autostart = true
+
+[node name="gameover" type="Label" parent="." index="6"]
+
+visible = false
+show_behind_parent = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -148.0
+margin_top = 24.0
+margin_right = 7.0
+margin_bottom = 38.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Your nation lies in ruins."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Rect", "Visibility" ]
+
+[node name="gameovertimer" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 6.0
+one_shot = false
+autostart = false
+
+[node name="gameoversound" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = SubResource( 1 )
+volume_db = -5.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="timeout" from="Collisionstart" to="." method="_on_Collisionstart_timeout"]
+
+[connection signal="timeout" from="gameovertimer" to="." method="_on_gameovertimer_timeout"]
 
 

@@ -5,6 +5,7 @@ var HPpopfull
 var HPpopnew
 var setHP
 signal progress_update
+var dead = false
 
 func _ready():
 	randomize()
@@ -29,7 +30,11 @@ func take_damage(damage):
 #		print(HPpopnew / HPpopfull)
 		emit_signal('progress_update', setHP)
 	if population <= 0:
-		hide()
+		if dead == false:
+			dead = true
+			hide()
+		else:
+			pass
 		
 func _update_progress(setHP):
 #	print(setHP)

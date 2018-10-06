@@ -1,15 +1,26 @@
 extends "res://City.gd"
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+export (PackedScene) var Player_Collision
+export (PackedScene) var gameoverscreen
+signal game_over
+var gameovercheck = false
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+	if population <= 0 and gameovercheck == false:
+		emit_signal('game_over')
+		gameovercheck = true
+		self.show()
+		$gameover.show()
+		$gameovertimer.start()
+		$gameoversound.play()
+		print("game_over")
+
+func _on_Collisionstart_timeout():
+	var b = Player_Collision.instance()
+	add_child(b)
+
+func _on_gameovertimer_timeout():
+		get_tree().reload_current_scene()
