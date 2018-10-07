@@ -7,10 +7,10 @@ path="res://.import/ICONS-12.png-b41c771cca0d0f024515893ef7ff293d.stex"
 [deps]
 
 source_file="res://assets/cityicons/ICONS-12.png"
-source_md5="4e473ce50f1bda8a9e5b562d69b71328"
+source_md5="26b8345032685dabd2ebe150d5403e6c"
 
 dest_files=[ "res://.import/ICONS-12.png-b41c771cca0d0f024515893ef7ff293d.stex" ]
-dest_md5="3b190218adb5fef266dc2bf02940068e"
+dest_md5="4e062ea9f2a815747b2f3459288d39aa"
 
 [params]
 

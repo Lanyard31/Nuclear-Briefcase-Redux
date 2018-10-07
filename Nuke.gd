@@ -36,7 +36,8 @@ func start(_position, _direction, group):
 		#seek()
 	
 func _process(delta):
-	position += velocity * delta
+	if $AnimatedSprite.is_visible() == true:
+		position += velocity * delta
 
 #func seek():
 	#var desired = (target.position - position).normalized() * speed
@@ -44,7 +45,9 @@ func _process(delta):
 	#return steer
 
 func explode():
-	queue_free()
+	$AnimatedSprite.hide()
+	self.set_modulate(Color(1, 1, 1))
+	$explosion.play()
 
 func _on_Nuke_body_entered(body):
 	if live == true:
@@ -54,3 +57,6 @@ func _on_Nuke_body_entered(body):
 
 func _on_Ignition_Timer_timeout():
 	live = true
+
+func _on_explosion_animation_finished():
+	queue_free() # replace with function body

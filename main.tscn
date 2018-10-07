@@ -1,12 +1,12 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://PlayerNuke.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PlayerCity.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/worldmap-09.png" type="Texture" id=4]
+[ext_resource path="res://assets/assets_new/MAP_newworldmap2.png" type="Texture" id=4]
 [ext_resource path="res://NPCity.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/cityicons/ICONS-04.png" type="Texture" id=6]
-[ext_resource path="res://assets/cityicons/ICONS-03.png" type="Texture" id=7]
+[ext_resource path="res://assets/assets_new/new-icons/cityicons/ICONS-03.png" type="Texture" id=6]
+[ext_resource path="res://assets/assets_new/new-icons/cityicons/ICONS-04.png" type="Texture" id=7]
 [ext_resource path="res://assets/cityicons/ICONS-06.png" type="Texture" id=8]
 [ext_resource path="res://assets/cityicons/ICONS-05.png" type="Texture" id=9]
 [ext_resource path="res://assets/cityicons/ICONS-14.png" type="Texture" id=10]
@@ -53,11 +53,75 @@
 [ext_resource path="res://assets/sounds/boof.wav" type="AudioStream" id=51]
 [ext_resource path="res://assets/sounds/player-loses.wav" type="AudioStream" id=52]
 [ext_resource path="res://assets/sounds/Nuclear Ballet.ogg" type="AudioStream" id=53]
+[ext_resource path="res://assets/assets_new/Square.ttf" type="DynamicFontData" id=54]
 
-[sub_resource type="AudioStreamRandomPitch" id=1]
+[sub_resource type="Animation" id=1]
+
+resource_name = "fuzzy"
+length = 0.4
+loop = false
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 2.32791 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.143647 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.17, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+
+[sub_resource type="AudioStreamRandomPitch" id=2]
 
 audio_stream = ExtResource( 51 )
 random_pitch = 1.1
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 0
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 54 )
+_sections_unfolded = [ "Font", "Resource" ]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 0
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 54 )
+_sections_unfolded = [ "Font" ]
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 10
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 54 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=6]
+
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 54 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Root" type="Node" index="0"]
 
@@ -67,13 +131,24 @@ City = ExtResource( 3 )
 
 [node name="Worldmap" type="Sprite" parent="." index="0"]
 
+modulate = Color( 1, 1, 1, 0.143647 )
 z_index = -2
 texture = ExtResource( 4 )
 centered = false
-_sections_unfolded = [ "Offset", "Z Index" ]
+_sections_unfolded = [ "Offset", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Worldmap" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/fuzzy = SubResource( 1 )
+blend_times = [  ]
 
 [node name="GunTimer" type="Timer" parent="." index="1"]
 
@@ -88,7 +163,7 @@ editor/display_folded = true
 
 [node name="algeria" parent="Nations" index="0" instance=ExtResource( 5 )]
 
-position = Vector2( 1601.54, 767.462 )
+position = Vector2( 896.612, 532.512 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/algeria" index="3"]
 
@@ -97,7 +172,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="AUSTRALIA" parent="Nations" index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 935.451, 432.179 )
+position = Vector2( 1650.7, 812.697 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/AUSTRALIA" index="3"]
 
@@ -106,7 +181,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="brazil" parent="Nations" index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 666.675, 665.52 )
+position = Vector2( 528.675, 726.52 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/brazil" index="3"]
 
@@ -115,7 +190,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="BURKINA_FASO" parent="Nations" index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 848.616, 521.053 )
+position = Vector2( 759.616, 667.053 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/BURKINA_FASO" index="3"]
 
@@ -124,7 +199,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="FINLAND" parent="Nations" index="4" instance=ExtResource( 5 )]
 
-position = Vector2( 1065.58, 185.39 )
+position = Vector2( 1037.94, 130.585 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/FINLAND" index="3"]
 
@@ -133,7 +208,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="france" parent="Nations" index="5" instance=ExtResource( 5 )]
 
-position = Vector2( 908.239, 350.487 )
+position = Vector2( 839.167, 387.682 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/france" index="3"]
 
@@ -142,7 +217,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="CHINA" parent="Nations" index="6" instance=ExtResource( 5 )]
 
-position = Vector2( 1442.41, 417.52 )
+position = Vector2( 1532.79, 407.799 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/CHINA" index="3"]
 
@@ -151,7 +226,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="chile" parent="Nations" index="7" instance=ExtResource( 5 )]
 
-position = Vector2( 554.592, 827.517 )
+position = Vector2( 457.592, 892.517 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/chile" index="3"]
 
@@ -160,7 +235,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="DENMARK" parent="Nations" index="8" instance=ExtResource( 5 )]
 
-position = Vector2( 970.073, 261.413 )
+position = Vector2( 901.365, 241.803 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/DENMARK" index="3"]
 
@@ -169,7 +244,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="dominican_republic" parent="Nations" index="9" instance=ExtResource( 5 )]
 
-position = Vector2( 511.202, 490.113 )
+position = Vector2( 354.202, 556.113 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/dominican_republic" index="3"]
 
@@ -178,7 +253,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="EGYPT" parent="Nations" index="10" instance=ExtResource( 5 )]
 
-position = Vector2( 1053.1, 456.998 )
+position = Vector2( 1055.1, 573.998 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/EGYPT" index="3"]
 
@@ -187,7 +262,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="england" parent="Nations" index="11" instance=ExtResource( 5 )]
 
-position = Vector2( 875.438, 279.338 )
+position = Vector2( 783.438, 293.338 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/england" index="3"]
 
@@ -196,7 +271,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="GERMANY" parent="Nations" index="12" instance=ExtResource( 5 )]
 
-position = Vector2( 963.081, 319.749 )
+position = Vector2( 886.081, 316.749 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/GERMANY" index="3"]
 
@@ -205,7 +280,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="ghana" parent="Nations" index="13" instance=ExtResource( 5 )]
 
-position = Vector2( 892.236, 563.732 )
+position = Vector2( 830.236, 710.732 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/ghana" index="3"]
 
@@ -214,7 +289,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="HONDURAS" parent="Nations" index="14" instance=ExtResource( 5 )]
 
-position = Vector2( 444.037, 528.808 )
+position = Vector2( 278.037, 586.808 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/HONDURAS" index="3"]
 
@@ -223,7 +298,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="hungary" parent="Nations" index="15" instance=ExtResource( 5 )]
 
-position = Vector2( 1019.84, 309.666 )
+position = Vector2( 1000.84, 293.666 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/hungary" index="3"]
 
@@ -232,7 +307,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="INDIA" parent="Nations" index="16" instance=ExtResource( 5 )]
 
-position = Vector2( 1306.08, 494.962 )
+position = Vector2( 1446.41, 557.26 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/INDIA" index="3"]
 
@@ -241,7 +316,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="israel" parent="Nations" index="17" instance=ExtResource( 5 )]
 
-position = Vector2( 1087.92, 420.904 )
+position = Vector2( 1149.92, 520.904 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/israel" index="3"]
 
@@ -250,7 +325,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="JAMAICA" parent="Nations" index="18" instance=ExtResource( 5 )]
 
-position = Vector2( 545.135, 537.679 )
+position = Vector2( 407.135, 584.679 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/JAMAICA" index="3"]
 
@@ -259,7 +334,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="japan" parent="Nations" index="19" instance=ExtResource( 5 )]
 
-position = Vector2( 1622.26, 385.779 )
+position = Vector2( 1762.26, 406.779 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/japan" index="3"]
 
@@ -268,7 +343,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="KOREA" parent="Nations" index="20" instance=ExtResource( 5 )]
 
-position = Vector2( 1562.4, 389.86 )
+position = Vector2( 1686.4, 365.86 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/KOREA" index="3"]
 
@@ -277,7 +352,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="kazakhstan" parent="Nations" index="21" instance=ExtResource( 5 )]
 
-position = Vector2( 1342.19, 360.98 )
+position = Vector2( 1438.19, 302.98 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/kazakhstan" index="3"]
 
@@ -286,7 +361,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="LESOTHO" parent="Nations" index="22" instance=ExtResource( 5 )]
 
-position = Vector2( 1029.02, 798.693 )
+position = Vector2( 1011.02, 970.693 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/LESOTHO" index="3"]
 
@@ -295,7 +370,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="lithuania" parent="Nations" index="23" instance=ExtResource( 5 )]
 
-position = Vector2( 1047.98, 251.778 )
+position = Vector2( 1057.32, 229.486 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/lithuania" index="3"]
 
@@ -304,7 +379,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="MADAGASCAR" parent="Nations" index="24" instance=ExtResource( 5 )]
 
-position = Vector2( 1147.25, 742.738 )
+position = Vector2( 1195.25, 942.738 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/MADAGASCAR" index="3"]
 
@@ -313,7 +388,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="mexico" parent="Nations" index="25" instance=ExtResource( 5 )]
 
-position = Vector2( 372.574, 464.853 )
+position = Vector2( 208.768, 506.004 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/mexico" index="3"]
 
@@ -331,7 +406,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="norway" parent="Nations" index="27" instance=ExtResource( 5 )]
 
-position = Vector2( 962.256, 202.099 )
+position = Vector2( 897.476, 148.464 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/norway" index="3"]
 
@@ -340,7 +415,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="OMAN" parent="Nations" index="28" instance=ExtResource( 5 )]
 
-position = Vector2( 1201.59, 495.727 )
+position = Vector2( 1343.39, 609.154 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/OMAN" index="3"]
 
@@ -349,7 +424,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="PAKISTAN" parent="Nations" index="29" instance=ExtResource( 5 )]
 
-position = Vector2( 1245.91, 442.542 )
+position = Vector2( 1355.02, 507.655 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/PAKISTAN" index="3"]
 
@@ -358,7 +433,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="panama" parent="Nations" index="30" instance=ExtResource( 5 )]
 
-position = Vector2( 489.126, 578.83 )
+position = Vector2( 337.126, 628.83 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/panama" index="3"]
 
@@ -367,7 +442,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="QATAR" parent="Nations" index="31" instance=ExtResource( 5 )]
 
-position = Vector2( 1095.38, 535.888 )
+position = Vector2( 1178.38, 629.888 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/QATAR" index="3"]
 
@@ -376,7 +451,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="ROMANIA" parent="Nations" index="32" instance=ExtResource( 5 )]
 
-position = Vector2( 1042.03, 358.331 )
+position = Vector2( 1042.03, 376.331 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/ROMANIA" index="3"]
 
@@ -385,7 +460,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="SAUDI_ARABIA" parent="Nations" index="33" instance=ExtResource( 5 )]
 
-position = Vector2( 1136.22, 463.594 )
+position = Vector2( 1238.22, 563.594 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/SAUDI_ARABIA" index="3"]
 
@@ -394,7 +469,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="switzerland" parent="Nations" index="34" instance=ExtResource( 5 )]
 
-position = Vector2( 970.217, 367.594 )
+position = Vector2( 940.627, 361.903 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/switzerland" index="3"]
 
@@ -403,7 +478,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="THAILAND" parent="Nations" index="35" instance=ExtResource( 5 )]
 
-position = Vector2( 1435.22, 529.594 )
+position = Vector2( 1541.22, 611.594 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/THAILAND" index="3"]
 
@@ -412,7 +487,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="turkey" parent="Nations" index="36" instance=ExtResource( 5 )]
 
-position = Vector2( 1091.06, 370.698 )
+position = Vector2( 1117.06, 446.698 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/turkey" index="3"]
 
@@ -421,7 +496,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="UKRAINE" parent="Nations" index="37" instance=ExtResource( 5 )]
 
-position = Vector2( 1255.22, 264.594 )
+position = Vector2( 1276.22, 200.594 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/UKRAINE" index="3"]
 
@@ -430,7 +505,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="united_states" parent="Nations" index="38" instance=ExtResource( 5 )]
 
-position = Vector2( 387.217, 387.594 )
+position = Vector2( 291.315, 406.498 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/united_states" index="3"]
 
@@ -439,7 +514,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="VENEZUELA" parent="Nations" index="39" instance=ExtResource( 5 )]
 
-position = Vector2( 508.217, 644.594 )
+position = Vector2( 460.217, 629.594 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/VENEZUELA" index="3"]
 
@@ -448,7 +523,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="vietnam" parent="Nations" index="40" instance=ExtResource( 5 )]
 
-position = Vector2( 1478.22, 489.594 )
+position = Vector2( 1599.22, 544.594 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/vietnam" index="3"]
 
@@ -457,7 +532,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="YEMEN" parent="Nations" index="41" instance=ExtResource( 5 )]
 
-position = Vector2( 1146.22, 540.594 )
+position = Vector2( 1262.81, 653.384 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/YEMEN" index="3"]
 
@@ -466,7 +541,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="ZAMBIA" parent="Nations" index="42" instance=ExtResource( 5 )]
 
-position = Vector2( 1032.72, 676.063 )
+position = Vector2( 1034.72, 847.063 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/ZAMBIA" index="3"]
 
@@ -475,7 +550,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="zimbabwe" parent="Nations" index="43" instance=ExtResource( 5 )]
 
-position = Vector2( 1063.2, 728.563 )
+position = Vector2( 1085.2, 899.563 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/zimbabwe" index="3"]
 
@@ -484,7 +559,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="russia" parent="Nations" index="44" instance=ExtResource( 5 )]
 
-position = Vector2( 1418.46, 259.395 )
+position = Vector2( 1545.46, 214.395 )
 
 [node name="Sprite2" type="Sprite" parent="Nations/russia" index="3"]
 
@@ -493,7 +568,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="firemissile" type="AudioStreamPlayer" parent="." index="3"]
 
-stream = SubResource( 1 )
+stream = SubResource( 2 )
 volume_db = -15.0
 autoplay = false
 mix_target = 0
@@ -562,7 +637,6 @@ autostart = false
 
 [node name="youwin" type="Label" parent="." index="10"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -578,11 +652,91 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
 text = "you win i guess"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="VSplitContainer" type="VSplitContainer" parent="." index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 587.0
+margin_bottom = 164.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+split_offset = 1
+collapsed = false
+dragger_visibility = 0
+
+[node name="popcounter" type="RichTextLabel" parent="." index="12"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 22.0
+margin_top = 894.0
+margin_right = 198.0
+margin_bottom = 909.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/mono_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "World Population:"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="pop" type="Label" parent="." index="13"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 37.0
+margin_top = 908.0
+margin_right = 346.0
+margin_bottom = 984.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 6 )
+text = "test"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Poptimer" type="Timer" parent="." index="14"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
 
 [connection signal="redshoot" from="." to="." method="_on_redshoot"]
 

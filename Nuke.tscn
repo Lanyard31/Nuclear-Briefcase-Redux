@@ -1,11 +1,45 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Nuke.gd" type="Script" id=1]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00000.png" type="Texture" id=2]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00001.png" type="Texture" id=3]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00002.png" type="Texture" id=4]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00003.png" type="Texture" id=5]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00004.png" type="Texture" id=6]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00005.png" type="Texture" id=7]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00006.png" type="Texture" id=8]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00007.png" type="Texture" id=9]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00008.png" type="Texture" id=10]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00009.png" type="Texture" id=11]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00010.png" type="Texture" id=12]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00011.png" type="Texture" id=13]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00012.png" type="Texture" id=14]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00013.png" type="Texture" id=15]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00014.png" type="Texture" id=16]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00015.png" type="Texture" id=17]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00016.png" type="Texture" id=18]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00017.png" type="Texture" id=19]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00018.png" type="Texture" id=20]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00019.png" type="Texture" id=21]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00020.png" type="Texture" id=22]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00021.png" type="Texture" id=23]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00022.png" type="Texture" id=24]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00023.png" type="Texture" id=25]
+[ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00024.png" type="Texture" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "default",
+"speed": 48.0
+} ]
 
 [node name="Nuke" type="Area2D"]
 
@@ -46,8 +80,18 @@ wait_time = 0.1
 one_shot = false
 autostart = false
 
+[node name="explosion" type="AnimatedSprite" parent="." index="4"]
+
+modulate = Color( 1, 1, 1, 0.187843 )
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 2 )
+animation = "default"
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
 [connection signal="body_entered" from="." to="." method="_on_Nuke_body_entered"]
 
 [connection signal="timeout" from="Ignition_Timer" to="." method="_on_Ignition_Timer_timeout"]
+
+[connection signal="animation_finished" from="explosion" to="." method="_on_explosion_animation_finished"]
 
 

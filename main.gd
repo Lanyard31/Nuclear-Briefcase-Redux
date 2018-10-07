@@ -7,7 +7,8 @@ signal redshoot
 export (PackedScene) var Nuke
 export (PackedScene) var City
 
-var population = 100
+var population = 1000
+var deadpop = 0
 var missilecount = 100
 var can_shoot = true
 var position
@@ -19,6 +20,10 @@ var spawncity
 var spawnhere
 var spawnherespot = Vector2()
 var spawnherecollisionremove
+var worldpopulation = 0
+var worldpopulationdisplayinit
+var worldpopulationdisplay
+var poptimerdone = false
 
 var ally_assigner
 var ally1
@@ -42,12 +47,17 @@ var Nations = ["algeria", "AUSTRALIA", "BURKINA_FASO", "brazil", "CHINA", "chile
 
 
 func _ready():
-	#Randomly choose a nation location for the player to spawn at, disable NPCity there
+	worldpopulationdisplayinit = str(global.globalworldpop)
+	$pop.text = (worldpopulationdisplayinit + "k")
+	
+	$Worldmap/AnimationPlayer.play("fuzzy")#Randomly choose a nation location for the player to spawn at, disable NPCity there
 	randomize()
 	var spawncity = Nations[(randi() % Nations.size() - 2)]
 	print("Player Spawned:", spawncity) 
 	spawnhere = 'Nations'.plus_file(spawncity)
-	get_node(spawnhere).set_modulate(Color(0.7, 0.7, 1))
+	get_node(spawnhere).set_modulate(Color(1, 1, 1))
+	get_node(spawnhere).emit_signal('cityinitialcancel')
+	global.globalworldpop -= get_node(spawnhere).population
 	spawnherespot = get_node(spawnhere).position
 	var p = City.instance()
 	add_child(p)
@@ -112,6 +122,13 @@ func _ready():
 	#change their color modulation
 
 func _process(delta):
+	#population updater
+	if global.globalworldpop <= 0:
+		$pop.hide()
+	worldpopulationdisplay = str(global.globalworldpop)
+	$pop.text = (worldpopulationdisplay + "k")
+	
+	
 	$GunTimer.wait_time = rand_range(0.5, 3)
 #	allygroupchecker()
 	group = null
@@ -374,7 +391,8 @@ func _on_GunTimer_timeout():
 	pass # replace with function body
 	
 func _on_ballettimer_timeout():
-		$ballet.play()
+#		$ballet.play()
+	pass
 		
 func _on_selfnuketimer_timeout():
 	get_tree().reload_current_scene()
@@ -391,3 +409,32 @@ func _on_selfnuketimer_timeout():
 func _on_doomsdaytimer_timeout():
 	$youwin.show()
 	print("youwin")
+	
+#func _on_cityinitial(population):
+#	global.globalworldpop += population
+#	worldpopulationdisplayinit = str(global.globalworldpop)
+#	$pop.text = (worldpopulationdisplayinit + "k") 
+
+#func _on_cityupdate(deadpop):
+#	if deadpop <= 0:
+#		deadpop = 0
+#	global.globalworldpop -= deadpop
+#	if global.globalworldpop <= 0:
+#		$pop.hide()
+#	worldpopulationdisplay = str(global.globalworldpop)
+#	$pop.text = (worldpopulationdisplay + "k")
+#	
+#func popcombiner(population):
+#	$Poptimer.start()
+#	if poptimerdone = false
+#		worldpopulation += population
+#		worldpopulationdisplayinit = str(worldpopulation)
+#		$pop.text = (worldpopulationdisplayinit)
+#	else:
+#	if deadpop <= 0:
+#		deadpop = 0
+#	worldpopulation -= deadpop
+#	if worldpopulation < 0:
+#		worldpopulation = 0
+#	pop.text = (worldpopulation)
+#		pass

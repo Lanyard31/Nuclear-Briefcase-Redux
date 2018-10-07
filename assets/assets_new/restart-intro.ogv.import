@@ -1,0 +1,17 @@
+[remap]
+
+importer="Theora"
+type="VideoStreamTheora"
+path="res://.import/restart-intro.ogv-f9b6d19b3f59628c096f999b10599277.ogvstr"
+
+[deps]
+
+source_file="res://assets/assets_new/restart-intro.ogv"
+source_md5="8e2c253d5b7b1d5d4f0a3aedc058e0ec"
+
+dest_files=[ "res://.import/restart-intro.ogv-f9b6d19b3f59628c096f999b10599277.ogvstr" ]
+dest_md5="24204aeeddfdc2a9b4b67bd69faa101f"
+
+[params]
+
+loop=true

@@ -1,0 +1,17 @@
+[remap]
+
+importer="Theora"
+type="VideoStreamTheora"
+path="res://.import/enter-war-room.ogv-2a5ce7ebded68989606156807f465f03.ogvstr"
+
+[deps]
+
+source_file="res://assets/assets_new/enter-war-room.ogv"
+source_md5="fd607eeed63017904b2515c10babf7cf"
+
+dest_files=[ "res://.import/enter-war-room.ogv-2a5ce7ebded68989606156807f465f03.ogvstr" ]
+dest_md5="b6388289fd9a3b1286c171c7469804a1"
+
+[params]
+
+loop=true
