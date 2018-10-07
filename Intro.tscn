@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Intro.gd" type="Script" id=1]
 [ext_resource path="res://assets/assets_new/enter-war-room.ogv" type="VideoStream" id=2]
@@ -8,6 +8,11 @@
 [ext_resource path="res://assets/assets_new/enterexitbuttons/startbuttons-02.png" type="Texture" id=6]
 [ext_resource path="res://assets/assets_new/enterexitbuttons/startbuttons-03.png" type="Texture" id=7]
 [ext_resource path="res://assets/assets_new/enterexitbuttons/startbuttons-01.png" type="Texture" id=8]
+[ext_resource path="res://assets/assets_new/popups/popups/window_esc-controls-button.png" type="Texture" id=9]
+[ext_resource path="res://assets/assets_new/popups/popups/window_esc-back-button.png" type="Texture" id=10]
+[ext_resource path="res://assets/assets_new/popups/popups/window_how-to-play.png" type="Texture" id=11]
+[ext_resource path="res://assets/sounds/enter-war.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/alarm.wav" type="AudioStream" id=13]
 
 [node name="Intro" type="Node"]
 
@@ -61,6 +66,9 @@ expand = true
 buffering_msec = 500
 bus = "Master"
 _sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="." index="2"]
 
@@ -68,6 +76,9 @@ visible = false
 texture = ExtResource( 4 )
 centered = false
 _sections_unfolded = [ "Offset" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="exit" type="TextureButton" parent="." index="3"]
 
@@ -135,6 +146,21 @@ wait_time = 7.2
 one_shot = true
 autostart = true
 
+[node name="ESC" type="Sprite" parent="entertimer" index="0"]
+
+visible = false
+position = Vector2( 190.606, 67.2707 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ESCback" type="Sprite" parent="entertimer" index="1"]
+
+visible = false
+position = Vector2( 139.375, 66.7584 )
+texture = ExtResource( 10 )
+
 [node name="microtransition" type="Timer" parent="." index="7"]
 
 process_mode = 1
@@ -149,6 +175,35 @@ wait_time = 7.9
 one_shot = true
 autostart = false
 
+[node name="howtoplay" type="Sprite" parent="." index="9"]
+
+visible = false
+position = Vector2( 969.87, 532.677 )
+texture = ExtResource( 11 )
+
+[node name="enterwarsound" type="AudioStreamPlayer" parent="." index="10"]
+
+stream = ExtResource( 12 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="alarmsound" type="AudioStreamPlayer" parent="." index="11"]
+
+stream = ExtResource( 13 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="startsound" type="Timer" parent="." index="12"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = true
+
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 
 [connection signal="pressed" from="enter" to="." method="_on_enter_pressed"]
@@ -160,5 +215,7 @@ autostart = false
 [connection signal="timeout" from="microtransition" to="." method="_on_microtransition_timeout"]
 
 [connection signal="timeout" from="transitiontomaintimer" to="." method="_on_transitiontomaintimer_timeout"]
+
+[connection signal="timeout" from="startsound" to="." method="_on_startsound_timeout"]
 
 

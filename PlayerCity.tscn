@@ -83,7 +83,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="onedead" type="Timer" parent="." index="12"]
+[node name="onedead" type="Timer" parent="." index="11"]
 
 process_mode = 1
 wait_time = 1.0

@@ -20,6 +20,7 @@ func _process(delta):
 		$gameover.show()
 		$gameovertimer.start()
 		$gameoversound.play()
+		global.playerdead == true
 		print("game_over")
 
 func _on_Collisionstart_timeout():

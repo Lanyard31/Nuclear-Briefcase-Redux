@@ -3,11 +3,28 @@ extends Node
 func _ready():
 	pass
 
+func _process(delta):
+	if Input.is_action_just_pressed("esc"):
+		if global.howtoplay == 0:
+			return
+		if global.howtoplay == 1:
+			global.howtoplay = 2
+			$howtoplay.show()
+			$entertimer/ESC.hide()
+			$entertimer/ESCback.show()
+		else:
+			global.howtoplay = 1
+			$howtoplay.hide()
+			$entertimer/ESCback.hide()
+			$entertimer/ESC.show()
+
 func _on_exit_pressed():
 	get_tree().quit() 
 
 func _on_bootuptimer_timeout():
 	$exit.show()
+	$entertimer/ESC.show()
+	global.howtoplay = 1
 	
 func _on_entertimer_timeout():
 	$enter.show()
@@ -16,13 +33,23 @@ func _on_enter_pressed():
 	$enterwar.show()
 	$enterwar.play()
 	$microtransition.start()
+	global.howtoplay = 0
+	$howtoplay.hide()
+	$entertimer/ESCback.hide()
+	$entertimer/ESC.hide()
+	
 	
 func _on_microtransition_timeout():
 	$bootup.hide()
 	$exit.hide()
+	$entertimer/ESC.hide()
 	$bootuptimer.stop()
 	$enter.hide()
+	$alarmsound.play()
 	$transitiontomaintimer.start()
 
 func _on_transitiontomaintimer_timeout():
 	get_tree().change_scene("res://main.tscn")
+
+func _on_startsound_timeout():
+	$enterwarsound.play()

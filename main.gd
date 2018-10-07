@@ -108,11 +108,11 @@ func _ready():
 	#print("Ally Group 3:", ally3members)
 		
 	for member in ally1members: #blue
-		member.set_modulate(Color(0.1, 0.1, 1.0))
+		member.set_modulate(Color(0.0941176470588235, 0.9098039215686275, 0.7137254901960784))
 	for member in ally2members: #red
-		member.set_modulate(Color(0.8, 0.4, 0.2))
+		member.set_modulate(Color(0.9098039215686275, 0.0941176470588235, 0.5607843137254902))
 	for member in ally3members: #yellow
-		member.set_modulate(Color(1.0, 1.0, 0.1)) 
+		member.set_modulate(Color(0.9372549019607843, 0.2627450980392157, 0.1058823529411765)) 
 		
 		
 	#add_to_group(ally1)
@@ -122,6 +122,10 @@ func _ready():
 	#change their color modulation
 
 func _process(delta):
+	#gameovercheckdisplay
+	if global.playerdead == true:
+		$gameover.show()
+	
 	#population updater
 	if global.globalworldpop <= 0:
 		$pop.hide()
@@ -391,9 +395,9 @@ func _on_GunTimer_timeout():
 	pass # replace with function body
 	
 func _on_ballettimer_timeout():
-#		$ballet.play()
+	$ballet.play()
 	pass
-		
+	
 func _on_selfnuketimer_timeout():
 	get_tree().reload_current_scene()
 	

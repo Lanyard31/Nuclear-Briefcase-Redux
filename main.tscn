@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://PlayerNuke.tscn" type="PackedScene" id=2]
@@ -53,7 +53,10 @@
 [ext_resource path="res://assets/sounds/boof.wav" type="AudioStream" id=51]
 [ext_resource path="res://assets/sounds/player-loses.wav" type="AudioStream" id=52]
 [ext_resource path="res://assets/sounds/Nuclear Ballet.ogg" type="AudioStream" id=53]
-[ext_resource path="res://assets/assets_new/Square.ttf" type="DynamicFontData" id=54]
+[ext_resource path="res://assets/assets_new/popups/popups/window_nuke-yourself.png" type="Texture" id=54]
+[ext_resource path="res://assets/assets_new/popups/popups/window_lose.png" type="Texture" id=55]
+[ext_resource path="res://assets/assets_new/popups/popups/window_victory.png" type="Texture" id=56]
+[ext_resource path="res://assets/assets_new/Square.ttf" type="DynamicFontData" id=57]
 
 [sub_resource type="Animation" id=1]
 
@@ -96,31 +99,23 @@ random_pitch = 1.1
 size = 0
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 54 )
-_sections_unfolded = [ "Font", "Resource" ]
-
-[sub_resource type="DynamicFont" id=4]
-
-size = 0
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 54 )
+font_data = ExtResource( 57 )
 _sections_unfolded = [ "Font" ]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 
 size = 10
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 54 )
+font_data = ExtResource( 57 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 54 )
+font_data = ExtResource( 57 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Root" type="Node" index="0"]
@@ -574,31 +569,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="self_nuke" type="Label" parent="." index="4"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 607.0
-margin_top = 863.0
-margin_right = 732.0
-margin_bottom = 877.0
-rect_scale = Vector2( 6, 6 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "You nuked yourself."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect" ]
-
-[node name="playerloss" type="AudioStreamPlayer" parent="." index="5"]
+[node name="playerloss" type="AudioStreamPlayer" parent="." index="4"]
 
 stream = ExtResource( 52 )
 volume_db = 0.0
@@ -606,7 +577,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="ballet" type="AudioStreamPlayer" parent="." index="6"]
+[node name="ballet" type="AudioStreamPlayer" parent="." index="5"]
 
 stream = ExtResource( 53 )
 volume_db = -10.0
@@ -614,68 +585,91 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="ballettimer" type="Timer" parent="." index="7"]
+[node name="ballettimer" type="Timer" parent="." index="6"]
 
 process_mode = 1
 wait_time = 2.0
 one_shot = true
 autostart = true
 
-[node name="selfnuketimer" type="Timer" parent="." index="8"]
+[node name="self_nuke" type="TextureRect" parent="." index="7"]
+
+visible = false
+modulate = Color( 1, 1, 1, 0.784314 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 475.0
+margin_top = 350.0
+margin_right = 1445.0
+margin_bottom = 729.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 54 )
+stretch_mode = 3
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="gameover" type="TextureRect" parent="." index="8"]
+
+visible = false
+modulate = Color( 1, 1, 1, 0.784314 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 475.0
+margin_top = 350.0
+margin_right = 1445.0
+margin_bottom = 729.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 55 )
+stretch_mode = 3
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="youwin" type="TextureRect" parent="." index="9"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 475.0
+margin_top = 350.0
+margin_right = 1445.0
+margin_bottom = 729.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 56 )
+stretch_mode = 3
+_sections_unfolded = [ "Anchor", "Rect" ]
+
+[node name="selfnuketimer" type="Timer" parent="." index="10"]
 
 process_mode = 1
 wait_time = 8.0
 one_shot = true
 autostart = false
 
-[node name="doomsdaytimer" type="Timer" parent="." index="9"]
+[node name="doomsdaytimer" type="Timer" parent="." index="11"]
 
 process_mode = 1
 wait_time = 12.0
 one_shot = false
 autostart = false
-
-[node name="youwin" type="Label" parent="." index="10"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 217.0
-margin_top = 735.0
-margin_right = 319.0
-margin_bottom = 749.0
-rect_scale = Vector2( 1.2, 1.2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
-text = "you win i guess"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
-
-[node name="VSplitContainer" type="VSplitContainer" parent="." index="11"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 587.0
-margin_bottom = 164.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-split_offset = 1
-collapsed = false
-dragger_visibility = 0
 
 [node name="popcounter" type="RichTextLabel" parent="." index="12"]
 
@@ -693,8 +687,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/mono_font = SubResource( 4 )
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/mono_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -724,7 +718,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "test"
 percent_visible = 1.0
 lines_skipped = 0
