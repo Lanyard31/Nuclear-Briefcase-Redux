@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/startgame-siren-reel.wav-ed00cceeaaa13d7b4d2887fcd3fee722.sample"
+
+[deps]
+
+source_file="res://assets/sounds/startgame-siren-reel.wav"
+source_md5="9327e117635751dab6b3e9d9bce4e788"
+
+dest_files=[ "res://.import/startgame-siren-reel.wav-ed00cceeaaa13d7b4d2887fcd3fee722.sample" ]
+dest_md5="043343bf46dac97faa27e3ef35275c3b"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

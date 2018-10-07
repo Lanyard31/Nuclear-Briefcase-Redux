@@ -1,18 +1,20 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Intro.gd" type="Script" id=1]
 [ext_resource path="res://assets/assets_new/enter-war-room.ogv" type="VideoStream" id=2]
 [ext_resource path="res://assets/assets_new/startup-intro.ogv" type="VideoStream" id=3]
 [ext_resource path="res://assets/assets_new/intro/intro/intro_00247.png" type="Texture" id=4]
 [ext_resource path="res://assets/assets_new/enterexitbuttons/startbuttons-04.png" type="Texture" id=5]
-[ext_resource path="res://assets/assets_new/enterexitbuttons/startbuttons-02.png" type="Texture" id=6]
-[ext_resource path="res://assets/assets_new/enterexitbuttons/startbuttons-03.png" type="Texture" id=7]
-[ext_resource path="res://assets/assets_new/enterexitbuttons/startbuttons-01.png" type="Texture" id=8]
-[ext_resource path="res://assets/assets_new/popups/popups/window_esc-controls-button.png" type="Texture" id=9]
-[ext_resource path="res://assets/assets_new/popups/popups/window_esc-back-button.png" type="Texture" id=10]
-[ext_resource path="res://assets/assets_new/popups/popups/window_how-to-play.png" type="Texture" id=11]
-[ext_resource path="res://assets/sounds/enter-war.wav" type="AudioStream" id=12]
-[ext_resource path="res://assets/sounds/alarm.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/assets_new/quickgrab/startbuttons-_pushstate-exit.png" type="Texture" id=6]
+[ext_resource path="res://assets/assets_new/enterexitbuttons/startbuttons-02.png" type="Texture" id=7]
+[ext_resource path="res://assets/assets_new/enterexitbuttons/startbuttons-03.png" type="Texture" id=8]
+[ext_resource path="res://assets/assets_new/quickgrab/startbuttons-_pushstate-enter.png" type="Texture" id=9]
+[ext_resource path="res://assets/assets_new/enterexitbuttons/startbuttons-01.png" type="Texture" id=10]
+[ext_resource path="res://assets/assets_new/popups/popups/window_esc-controls-button.png" type="Texture" id=11]
+[ext_resource path="res://assets/assets_new/popups/popups/window_esc-back-button.png" type="Texture" id=12]
+[ext_resource path="res://assets/assets_new/quickgrab/window_how-to-play.png" type="Texture" id=13]
+[ext_resource path="res://assets/sounds/enter-war.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/alarm.wav" type="AudioStream" id=15]
 
 [node name="Intro" type="Node"]
 
@@ -103,7 +105,8 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 5 )
-texture_hover = ExtResource( 6 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="enter" type="TextureButton" parent="." index="4"]
@@ -128,8 +131,9 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 7 )
-texture_hover = ExtResource( 8 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
 _sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="bootuptimer" type="Timer" parent="." index="5"]
@@ -150,7 +154,7 @@ autostart = true
 
 visible = false
 position = Vector2( 190.606, 67.2707 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -159,7 +163,7 @@ __meta__ = {
 
 visible = false
 position = Vector2( 139.375, 66.7584 )
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 
 [node name="microtransition" type="Timer" parent="." index="7"]
 
@@ -179,19 +183,19 @@ autostart = false
 
 visible = false
 position = Vector2( 969.87, 532.677 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 
 [node name="enterwarsound" type="AudioStreamPlayer" parent="." index="10"]
 
-stream = ExtResource( 12 )
-volume_db = -10.0
+stream = ExtResource( 14 )
+volume_db = -12.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
 [node name="alarmsound" type="AudioStreamPlayer" parent="." index="11"]
 
-stream = ExtResource( 13 )
+stream = ExtResource( 15 )
 volume_db = -10.0
 autoplay = false
 mix_target = 0
@@ -200,7 +204,7 @@ bus = "Master"
 [node name="startsound" type="Timer" parent="." index="12"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 0.8
 one_shot = true
 autostart = true
 

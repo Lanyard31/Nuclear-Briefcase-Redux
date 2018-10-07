@@ -45,7 +45,7 @@ func _on_microtransition_timeout():
 	$entertimer/ESC.hide()
 	$bootuptimer.stop()
 	$enter.hide()
-	$alarmsound.play()
+	$alarmsound
 	$transitiontomaintimer.start()
 
 func _on_transitiontomaintimer_timeout():

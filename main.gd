@@ -7,6 +7,7 @@ signal redshoot
 export (PackedScene) var Nuke
 export (PackedScene) var City
 
+var allylimit = 8
 var population = 1000
 var deadpop = 0
 var missilecount = 100
@@ -33,6 +34,7 @@ var Nationsnumber
 var newally
 var x
 var y = 0
+var z = 0
 var ally1members
 var ally2members
 var ally3members
@@ -47,8 +49,10 @@ var Nations = ["algeria", "AUSTRALIA", "BURKINA_FASO", "brazil", "CHINA", "chile
 
 
 func _ready():
+	
+	
 	worldpopulationdisplayinit = str(global.globalworldpop)
-	$pop.text = (worldpopulationdisplayinit + "k")
+	$pop.text = (worldpopulationdisplayinit + "0k")
 	
 	$Worldmap/AnimationPlayer.play("fuzzy")#Randomly choose a nation location for the player to spawn at, disable NPCity there
 	randomize()
@@ -92,13 +96,47 @@ func _ready():
 			ally_assigner = 'Nations'.plus_file(i)
 			ally_assigner = get_node(ally_assigner)
 			x = (randi() % 3)
+			var allygroup1check = get_tree().get_nodes_in_group("ally1")
+#			print(allygroup1check.size())
 			#print(x)
 			if x == 0:
-				ally_assigner.add_to_group('ally1')
+				#HERE LIMIT ALLY NUMBER
+				if allygroup1check.size() <= (allylimit):
+					var forally1global = ally_assigner.get_name()
+					global.ally1global = (global.ally1global + str(forally1global) + str("\n"))
+					ally_assigner.add_to_group('ally1')
 			elif x == 1:
 				ally_assigner.add_to_group('ally2')
 			elif x == 2:
 				ally_assigner.add_to_group('ally3')
+		
+	for i in Nations:
+		z += 1
+#		print(z)
+		if z >= (Nations.size() + 1):
+			return
+		elif i == spawncity:
+			pass
+		else:
+			ally_assigner = 'Nations'.plus_file(i)
+#			print(ally_assigner)
+			ally_assigner = get_node(ally_assigner)
+#			print(ally_assigner)
+			x = (randi() % 2)
+			if x == 0:
+				if ally_assigner.is_in_group('ally1'):
+					if ally_assigner.is_in_group('ally2'):
+						if ally_assigner.is_in_group('ally3'):
+							pass
+				else:
+					ally_assigner.add_to_group('ally2')
+			if x == 1:
+				if ally_assigner.is_in_group('ally1'):
+					if ally_assigner.is_in_group('ally2'):
+						if ally_assigner.is_in_group('ally3'):
+							pass
+				else:
+					ally_assigner.add_to_group('ally3')
 		
 	var ally1members = get_tree().get_nodes_in_group("ally1")
 	#print("Ally Group 1:", ally1members)
@@ -124,13 +162,14 @@ func _ready():
 func _process(delta):
 	#gameovercheckdisplay
 	if global.playerdead == true:
-		$gameover.show()
+		if global.selfnuked == false:
+			$gameover.show()
 	
 	#population updater
 	if global.globalworldpop <= 0:
 		$pop.hide()
 	worldpopulationdisplay = str(global.globalworldpop)
-	$pop.text = (worldpopulationdisplay + "k")
+	$pop.text = (worldpopulationdisplay + "0k")
 	
 	
 	$GunTimer.wait_time = rand_range(0.5, 3)
@@ -361,6 +400,7 @@ func fire_missile(_target):
 		dir = (target.global_position - ($PlayerCity/Muzzle.global_position)).normalized() * speed
 	if dir == Vector2(0, 0): #This means you nuked yourself
 		$self_nuke.show()
+		global.selfnuked = true
 		playercanshoot = false
 		$playerloss.play()
 		$selfnuketimer.start()
@@ -401,44 +441,15 @@ func _on_ballettimer_timeout():
 func _on_selfnuketimer_timeout():
 	get_tree().reload_current_scene()
 	
-#func allygroupchecker():
-#	for i in Nations:
-#		if i.is_in_group(ally2members):
-#			return
-#		elif i.is_group(ally3members):
-#			return
-#		else:
-#			print("youwin2")
 
 func _on_doomsdaytimer_timeout():
 	$youwin.show()
 	print("youwin")
 	
-#func _on_cityinitial(population):
-#	global.globalworldpop += population
-#	worldpopulationdisplayinit = str(global.globalworldpop)
-#	$pop.text = (worldpopulationdisplayinit + "k") 
-
-#func _on_cityupdate(deadpop):
-#	if deadpop <= 0:
-#		deadpop = 0
-#	global.globalworldpop -= deadpop
-#	if global.globalworldpop <= 0:
-#		$pop.hide()
-#	worldpopulationdisplay = str(global.globalworldpop)
-#	$pop.text = (worldpopulationdisplay + "k")
-#	
-#func popcombiner(population):
-#	$Poptimer.start()
-#	if poptimerdone = false
-#		worldpopulation += population
-#		worldpopulationdisplayinit = str(worldpopulation)
-#		$pop.text = (worldpopulationdisplayinit)
-#	else:
-#	if deadpop <= 0:
-#		deadpop = 0
-#	worldpopulation -= deadpop
-#	if worldpopulation < 0:
-#		worldpopulation = 0
-#	pop.text = (worldpopulation)
-#		pass
+	
+func _on_allytimer_timeout():
+	allylist()
+	
+func allylist():
+	#print(global.ally1global)
+	$allylist.text = str(global.ally1global)

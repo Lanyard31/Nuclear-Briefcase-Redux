@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+export (PackedScene) var Skull
+
 export (int) var population
 var HPpopfull
 var HPpopnew
@@ -37,7 +39,7 @@ func take_damage(damage):
 		HPpopnew = population
 #		str(_population) = population
 #		print(population)
-		var printme = "%sk"
+		var printme = "%s0k"
 		var printme2 = printme % population
 		$Pop_count.set_text(printme2)
 		setHP = ((HPpopnew / HPpopfull) * 100)
@@ -69,12 +71,17 @@ func _update_progress(setHP):
 
 
 func _on_citydeath_animation_finished():
+	#Instance a skull?
+#	var newskullpos = self.global_position
+#	var s = Skull.instance()
+#	add_child(s)
+	#newskullpos.position = spawnherespot
 	hide()
 
 
 func _on_cityinitial(population):
 	global.globalworldpop += population
-	print(str(global.globalworldpop))
+#	print(str(global.globalworldpop))
 
 
 func _on_City_cityinitialcancel():

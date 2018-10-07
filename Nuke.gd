@@ -17,7 +17,7 @@ func _ready():
 func start(_position, _direction, group):
 	if group == true:
 		group = false
-		self.set_modulate(Color(1.0, 0.6, 0.0))
+		self.set_modulate(Color(0.9098039215686275, 0.0941176470588235, 0.5607843137254902, 0.8))
 		live = false
 		$Ignition_Timer.start()
 		position = _position
@@ -26,7 +26,7 @@ func start(_position, _direction, group):
 		velocity = _direction * speed
 		#seek()
 	elif group == null:
-		self.set_modulate(Color(1.0, 0.0, 0.8))
+		self.set_modulate(Color(0.0941176470588235, 0.9098039215686275, 0.7137254901960784, 0.8))
 		live = false
 		$Ignition_Timer.start()
 		position = _position
