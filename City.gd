@@ -14,7 +14,7 @@ var deadpop
 var worldpopulationdisplayinit
 signal cityinitialcancel
 var ally1bonus = 5 #this is a multiplier
-var playerbonuspop = 5.85 #this is a multiplier, best at 5 (or maybe 5.8)
+var playerbonuspop = 6 #this is a multiplier, best at 5 (or maybe 5.8)
 
 func _ready():
 	$popcatch.start()
@@ -98,7 +98,9 @@ func _on_popcatch_timeout():
 	if self.is_in_group('ally1'):
 		population = int(round(population * ally1bonus))
 	if self.is_in_group('player'):
-		population = int(round(population * playerbonuspop))
+		population = int(round(36000.00))
+#		population = int(round(10000000.00)) # Cheat Mode
+#		population = int(round(population * playerbonuspop))
 		print(population)
 	HPpopfull = population
 	emit_signal('cityinitial', population)

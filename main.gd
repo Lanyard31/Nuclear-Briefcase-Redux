@@ -187,7 +187,7 @@ func _process(delta):
 		if global.selfnuked == false:
 			playercanshoot = false
 			$gameover.show()
-			print(global.missilecount)
+			#print(global.missilecount)
 			
 			#broken code below, bad logic gate
 			 

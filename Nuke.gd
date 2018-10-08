@@ -15,7 +15,7 @@ func _ready():
 	return damage
 
 func start(_position, _direction, group):
-	global.missilecount = (global.missilecount + 1)
+	#global.missilecount = (global.missilecount + 1)
 	if group == true:
 		group = false
 		self.set_modulate(Color(0.9098039215686275, 0.0941176470588235, 0.5607843137254902, 0.8))
