@@ -13,9 +13,6 @@ func _ready():
 	randomize()
 	damage = round(damage * rand_range(0.8, 1.2))
 	return damage
-	
-	#
-	connect('body_entered', self, '_on_body_entered')
 
 func start(_position, _direction, group):
 	if group == true:
@@ -41,13 +38,6 @@ func start(_position, _direction, group):
 func _process(delta):
 	if $AnimatedSprite.is_visible() == true:
 		position += velocity * delta
-		
-		#experimental
-	#if $missilecollisions.is_colliding():
-	 #   queue_free()
-func _on_body_entered(body):
-	print('bullet just hit: ', body.name)
-	queue_free()
 
 #func seek():
 	#var desired = (target.position - position).normalized() * speed

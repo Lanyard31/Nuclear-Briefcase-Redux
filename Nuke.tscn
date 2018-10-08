@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Nuke.gd" type="Script" id=1]
 [ext_resource path="res://assets/assets_new/explosion/explosion/explosion_00000.png" type="Texture" id=2]
@@ -40,11 +40,6 @@ animations = [ {
 "name": "default",
 "speed": 48.0
 } ]
-
-[sub_resource type="CircleShape2D" id=3]
-
-custom_solver_bias = 0.0
-radius = 5.17955
 
 [node name="Nuke" type="Area2D"]
 
@@ -93,24 +88,6 @@ scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 2 )
 animation = "default"
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
-
-[node name="missilecollisions" type="KinematicBody2D" parent="." index="5"]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-
-[node name="Timer" type="Timer" parent="missilecollisions" index="0"]
-
-process_mode = 1
-wait_time = 0.1
-one_shot = true
-autostart = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="missilecollisions" index="1"]
-
-shape = SubResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_Nuke_body_entered"]
 
