@@ -11,6 +11,8 @@ var winstate = false
 var critical = false
 var playcritsound = true
 var missilecount = 0
+var enemysleft = false
+var doomsdayreset
 
 func ready():
 	pass

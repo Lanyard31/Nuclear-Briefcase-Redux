@@ -14,7 +14,7 @@ var deadpop
 var worldpopulationdisplayinit
 signal cityinitialcancel
 var ally1bonus = 5 #this is a multiplier
-var playerbonuspop = 5.74 #this is a multiplier, best at 5 (or maybe 5.75)
+var playerbonuspop = 5.85 #this is a multiplier, best at 5 (or maybe 5.8)
 
 func _ready():
 	$popcatch.start()

@@ -1,11 +1,15 @@
 extends Node
 
+# Nuclear Briefcase
+# Produced by Lennard Noller, Ryan Pedersen, with Chris Moncrieffe
+
 signal launching
 signal shoot
 signal redshoot
 
 export (PackedScene) var Nuke
 export (PackedScene) var City
+export (PackedScene) var Indicator
 
 var allylimit = 8
 var population = 1000
@@ -26,6 +30,7 @@ var worldpopulationdisplayinit
 var worldpopulationdisplay
 var poptimerdone = false
 var randtimervar = true
+var enemycitycheck
 
 var ally_assigner
 var ally1
@@ -61,6 +66,7 @@ func _ready():
 	global.winstate = false
 	global.critical = false
 	global.playcritsound = true
+	global.doomsdayreset = true
 	
 	
 	#$GunTimer.wait_time = rand_range(0.5, 3)
@@ -82,8 +88,12 @@ func _ready():
 	global.globalworldpop -= get_node(spawnhere).population
 	spawnherespot = get_node(spawnhere).position
 	var p = City.instance()
+	var q = Indicator.instance()
 	add_child(p)
+	add_child(q)
 	$PlayerCity.position = spawnherespot
+	$Indicator.position = spawnherespot
+	$Indicator.play()
 	$PlayerCity.add_to_group('ally1')
 	$PlayerCity.add_to_group('player')
 	spawnherecollisionremove = 'Nations'.plus_file(spawncity).plus_file('CollisionShape2D')
@@ -175,24 +185,65 @@ func _process(delta):
 	#gameovercheckdisplay
 	if global.playerdead == true:
 		if global.selfnuked == false:
+			playercanshoot = false
 			$gameover.show()
 			print(global.missilecount)
+			
+			#broken code below, bad logic gate
+			 
+#	if global.startdelay == true:
+#		if global.critical == false:
+#			for i in Nations:
+#	#		if i == spawncity:
+#				enemycitycheck = 'Nations'.plus_file(i)
+#				print(enemycitycheck)
+#				enemycitycheck = get_node(enemycitycheck)
+#				#print(enemycitycheck)
+#				if enemycitycheck.is_in_group('ally2') == true:
+#					if enemycitycheck.is_in_group('ally3') == true:
+#						global.enemysleft = true
+#
+#	if global.startdelay == true
+#		if global
+						
+					#	print(enemycitycheck)
+				#		pass
+			#		else:
+			#			if enemycitycheck.is_in_group('player') == true:
+			#					print("cakewalk")
+			#					_on_notdoomsdaytimer_timeout()
+								
+								
+					#	if enemycitycheck.is_in_group('ally1') == false:
+					#		pass
+					#	else:
+					#		if enemycitycheck.is_in_group('player') == true:
+					#			print("cakewalk")
+					#			_on_notdoomsdaytimer_timeout()
+
+						
+					#print("caughtone")
+					#notdoomsdayvictory
+					
+		#$notdoomsdaytimer.start()
 			
 	
 	#population updater
 	
 	if global.globalworldpop >= 100000:
+		global.critical == false
 		worldpopulationdisplay = str(global.globalworldpop)
 		$pop.text = (worldpopulationdisplay + "0k")
 		$pop.set_modulate(Color(1, 1, 1))
 	else:
-		global.critical == true
-		$pop.text = ("critical")
-		$pop.set_modulate(Color(0.9098039215686275, 0.0941176470588235, 0.5607843137254902))
-		if global.startdelay == true:
-			if global.playcritsound == true:
-				playcrit()
-				global.playcritsound = false
+		if global.winstate == false:
+			global.critical == true
+			$pop.text = ("critical")
+			$pop.set_modulate(Color(0.9098039215686275, 0.0941176470588235, 0.5607843137254902))
+			if global.startdelay == true:
+				if global.playcritsound == true:
+					playcrit()
+					global.playcritsound = false
 
 	
 	
@@ -335,6 +386,7 @@ func _process(delta):
 				global.winstate = false
 				global.selfnuked = false
 				global.playerdead == false
+				global.doomsdayreset = true
 				global.globalworldpop = 1 #part of youwin globals
 				get_tree().reload_current_scene()
 				
@@ -344,6 +396,7 @@ func _process(delta):
 			global.selfnuked = false
 			global.playerdead == false
 			global.playcritsound = true
+			global.doomsdayreset = true
 			global.globalworldpop = 1 #part of youwin globals
 			get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("enter"):
@@ -352,6 +405,7 @@ func _process(delta):
 			global.selfnuked = false
 			global.playerdead == false
 			global.playcritsound = true
+			global.doomsdayreset = true
 			global.globalworldpop = 1 #part of youwin globals
 			get_tree().reload_current_scene()
 
@@ -464,6 +518,7 @@ func fire_NPCNuke_red(_member, _target, _group): #firing code for enemies
 
 	
 func fire_missile(_target): # firing code for player
+	$notdoomsdaytimer.start() # could be in process?
 	target = 'Nations'.plus_file(_target).plus_file('Muzzle')
 	target = get_node(target)
 	$firemissile.play()
@@ -493,13 +548,14 @@ func _on_missile_fire(Nuke, _position, _direction):
 	b.start(_position, _direction, group)
 	
 func _on_redshoot(Nuke, _position, _direction, group):
+	global.doomsdayreset = true
+	$doomtimer3.start()
 	var b = Nuke.instance()
 	add_child(b)
 	b.start(_position, _direction, group)
 	if global.critical == false:
 		$doomsdaytimer.start() # regular win
-	else:
-		$notdoomsdaytimer.start()
+
 	
 	#subtract one from missilecount
 	#create a missile at origin position
@@ -527,6 +583,7 @@ func _on_selfnuketimer_timeout():
 		global.startdelay = false
 		global.critical = false
 		global.playcritsound = true
+		global.doomsdayreset = true
 		get_tree().reload_current_scene()
 		
 
@@ -534,7 +591,6 @@ func _on_doomsdaytimer_timeout(): # FAILSTATE, sort of its winning
 	#if global.critical == true:
 		$youwin.show()
 		global.playerdead = false
-		global.globalworldpop = 1
 		global.ally1global = ""
 		global.selfnuked = false
 		global.startdelay = false
@@ -581,7 +637,7 @@ func _on_Randtimer_timeout():
 
 
 func _on_quit_pressed():
-	if global.winstate == true:
+	#if global.winstate == true:
 		get_tree().quit()
 
 
@@ -592,17 +648,8 @@ func _on_selfnukeboom_animation_finished():
 func playcrit():
 	$criticalwarning.play()
 
-func _on_notdoomsdaytimer_timeout():
-		$youwinsogood.show()
-		$cake.play()
-		global.playerdead = false
-		global.ally1global = ""
-		global.selfnuked = false
-		global.startdelay = false
-		global.winstate = true
-		global.critical = false
-		global.playcritsound = true
-		print("youwin")
+		
+		
 
 
 func _on_reset_pressed():
@@ -617,4 +664,31 @@ func _on_reset_pressed():
 	global.critical = false
 	global.playcritsound = true
 	global.missilecount
+	global.doomsdayreset = true
 	get_tree().reload_current_scene()
+
+# 3 sets reset to true every time an enemy fires
+
+func _on_doomtimer3_timeout():
+	global.doomsdayreset = false
+
+func _on_notdoomsdaytimer_timeout():
+	if global.doomsdayreset == false:
+		$doomtimer4.start()
+
+func _on_doomtimer4_timeout():
+	if global.doomsdayreset == false:
+		if global.winstate == false: # are you sure?
+			print("cakewin")
+			$youwinsogood.show()
+			$cake.play()
+			$pop.hide()
+			global.playerdead = false
+			global.ally1global = ""
+			global.selfnuked = false
+			global.startdelay = false
+			global.winstate = true
+			global.critical = false
+			global.playcritsound = true
+			print("youwin")
+

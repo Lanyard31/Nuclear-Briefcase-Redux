@@ -27,6 +27,8 @@ func _process(delta):
 		_indicator()
 	if global.selfnuked == true:
 		$citydeath.play()
+	if global.playerdead == true:
+		$HP.hide()
 
 func _on_Collisionstart_timeout():
 	var b = Player_Collision.instance()
