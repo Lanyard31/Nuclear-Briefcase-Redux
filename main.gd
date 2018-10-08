@@ -90,13 +90,13 @@ func _ready():
 	#Create PlayerCity node
 	
 	#Zambia and Zimbabwe make sure ally2 and ally3 have one member to prevent division by zero
-	ally_assigner = 'Nations'.plus_file('ZAMBIA')
-	ally_assigner = get_node(ally_assigner)
-	ally_assigner.add_to_group('ally2')
+	#ally_assigner = 'Nations'.plus_file('ZAMBIA')
+	#ally_assigner = get_node(ally_assigner)
+	#ally_assigner.add_to_group('ally2')
 	
-	ally_assigner = 'Nations'.plus_file('zimbabwe')
-	ally_assigner = get_node(ally_assigner)
-	ally_assigner.add_to_group('ally3')
+	#ally_assigner = 'Nations'.plus_file('zimbabwe')
+	#ally_assigner = get_node(ally_assigner)
+	#ally_assigner.add_to_group('ally3')
 	
 	#we assign the rest of the allies
 	for i in Nations:
@@ -113,7 +113,7 @@ func _ready():
 #			print(allygroup1check.size())
 			#print(x)
 			if x == 0:
-				#HERE LIMIT ALLY NUMBER
+				#Here the number of allies is limited
 				if allygroup1check.size() <= (allylimit):
 					var forally1global = ally_assigner.get_name()
 					global.ally1global = (global.ally1global + str(forally1global) + str("\n"))
@@ -123,7 +123,7 @@ func _ready():
 			elif x == 2:
 				ally_assigner.add_to_group('ally3')
 		
-		#skippedcatcher
+		#skippednationcatcher
 	for i in Nations:
 		if i == spawncity:
 			pass
@@ -137,38 +137,7 @@ func _ready():
 					if ally_assigner.is_in_group('ally3') == false:
 						print("caughtone")
 						ally_assigner.add_to_group('ally2')
-#			else:
-#				ally_assigner.add_to_group('ally2')
-
-		
-		
-#	for i in Nations:
-#		z += 1
-#		print(z)
-#		if z >= (Nations.size() + 1):
-#			return
-#		elif i == spawncity:
-#			pass
-#		else:
-#			ally_assigner = 'Nations'.plus_file(i)
-##			print(ally_assigner)
-#			ally_assigner = get_node(ally_assigner)
-##			print(ally_assigner)
-#			x = (randi() % 2)
-#			if x == 0:
-#				if ally_assigner.is_in_group('ally1'):
-#					if ally_assigner.is_in_group('ally2'):
-#						if ally_assigner.is_in_group('ally3'):
-#							return
-#				else:
-#					ally_assigner.add_to_group('ally2')
-#			if x == 1:
-#				if ally_assigner.is_in_group('ally1'):
-#					if ally_assigner.is_in_group('ally2'):
-#						if ally_assigner.is_in_group('ally3'):
-#							return
-#				else:
-#					ally_assigner.add_to_group('ally3')
+						
 		
 	var ally1members = get_tree().get_nodes_in_group("ally1")
 	print("Ally Group 1:", ally1members)

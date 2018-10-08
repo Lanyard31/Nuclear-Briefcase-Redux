@@ -14,7 +14,7 @@ func _ready():
 	#global.globalworldpop += bonuspop
 	
 func _process(delta):
-	if population <= 0 and gameovercheck == false:
+	if population <= 0 and gameovercheck == false and global.winstate == false:
 		emit_signal('game_over')
 #		$skull.show()
 		global.playerdead = true
