@@ -1,7 +1,7 @@
 extends Area2D
 
 export (int) var speed
-export (int) var damage = 1000
+var damage = 1000
 export (float) var lifetime
 var steer_force = 1
 var live

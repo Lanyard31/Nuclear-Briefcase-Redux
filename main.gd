@@ -25,6 +25,7 @@ var worldpopulation = 0
 var worldpopulationdisplayinit
 var worldpopulationdisplay
 var poptimerdone = false
+var randtimervar = true
 
 var ally_assigner
 var ally1
@@ -35,6 +36,7 @@ var newally
 var x
 var y = 0
 var z = 0
+var r
 var ally1members
 var ally2members
 var ally3members
@@ -49,7 +51,7 @@ var Nations = ["algeria", "AUSTRALIA", "BURKINA_FASO", "brazil", "CHINA", "chile
 
 
 func _ready():
-	
+	#$GunTimer.wait_time = rand_range(0.5, 3)
 	
 	worldpopulationdisplayinit = str(global.globalworldpop)
 	$pop.text = (worldpopulationdisplayinit + "0k")
@@ -110,40 +112,59 @@ func _ready():
 			elif x == 2:
 				ally_assigner.add_to_group('ally3')
 		
+		#skippedcatcher
 	for i in Nations:
-		z += 1
-#		print(z)
-		if z >= (Nations.size() + 1):
-			return
-		elif i == spawncity:
+		if i == spawncity:
 			pass
 		else:
 			ally_assigner = 'Nations'.plus_file(i)
 #			print(ally_assigner)
 			ally_assigner = get_node(ally_assigner)
 #			print(ally_assigner)
-			x = (randi() % 2)
-			if x == 0:
-				if ally_assigner.is_in_group('ally1'):
-					if ally_assigner.is_in_group('ally2'):
-						if ally_assigner.is_in_group('ally3'):
-							pass
-				else:
-					ally_assigner.add_to_group('ally2')
-			if x == 1:
-				if ally_assigner.is_in_group('ally1'):
-					if ally_assigner.is_in_group('ally2'):
-						if ally_assigner.is_in_group('ally3'):
-							pass
-				else:
-					ally_assigner.add_to_group('ally3')
+			if ally_assigner.is_in_group('ally1') == false:
+				if ally_assigner.is_in_group('ally2') == false:
+					if ally_assigner.is_in_group('ally3') == false:
+						print("caughtone")
+						ally_assigner.add_to_group('ally2')
+#			else:
+#				ally_assigner.add_to_group('ally2')
+
+		
+		
+#	for i in Nations:
+#		z += 1
+#		print(z)
+#		if z >= (Nations.size() + 1):
+#			return
+#		elif i == spawncity:
+#			pass
+#		else:
+#			ally_assigner = 'Nations'.plus_file(i)
+##			print(ally_assigner)
+#			ally_assigner = get_node(ally_assigner)
+##			print(ally_assigner)
+#			x = (randi() % 2)
+#			if x == 0:
+#				if ally_assigner.is_in_group('ally1'):
+#					if ally_assigner.is_in_group('ally2'):
+#						if ally_assigner.is_in_group('ally3'):
+#							return
+#				else:
+#					ally_assigner.add_to_group('ally2')
+#			if x == 1:
+#				if ally_assigner.is_in_group('ally1'):
+#					if ally_assigner.is_in_group('ally2'):
+#						if ally_assigner.is_in_group('ally3'):
+#							return
+#				else:
+#					ally_assigner.add_to_group('ally3')
 		
 	var ally1members = get_tree().get_nodes_in_group("ally1")
-	#print("Ally Group 1:", ally1members)
+	print("Ally Group 1:", ally1members)
 	var ally2members = get_tree().get_nodes_in_group("ally2")
-	#print("Ally Group 2:", ally2members)
+	print("Ally Group 2:", ally2members)
 	var ally3members = get_tree().get_nodes_in_group("ally3")
-	#print("Ally Group 3:", ally3members)
+	print("Ally Group 3:", ally3members)
 		
 	for member in ally1members: #blue
 		member.set_modulate(Color(0.0941176470588235, 0.9098039215686275, 0.7137254901960784))
@@ -177,7 +198,7 @@ func _process(delta):
 	$pop.text = (worldpopulationdisplay + "0k")
 	
 	
-	$GunTimer.wait_time = rand_range(0.5, 3)
+#	$GunTimer.wait_time = rand_range(0.5, 3)
 #	allygroupchecker()
 	group = null
 	NPCfire()
@@ -313,6 +334,7 @@ func NPCfire(): #target acquisition
 	if can_shoot and global.startdelay == true:
 		can_shoot = false
 		$GunTimer.start()
+		$GunTimer2.start()
 		var ally1members = get_tree().get_nodes_in_group("ally1")
 		var ally2members = get_tree().get_nodes_in_group("ally2")
 		var ally3members = get_tree().get_nodes_in_group("ally3")
@@ -323,7 +345,7 @@ func NPCfire(): #target acquisition
 				pass
 			else:
 				x = rand_range(0.001, 1)
-				if x >= 0.5:
+				if x > 0.5:
 					var target = ally2members[randi() % ally2members.size()]
 					if target.is_visible() == false:
 						target = ally2members[randi() % ally2members.size()]
@@ -345,14 +367,14 @@ func NPCfire(): #target acquisition
 				pass
 			else:
 				x = rand_range(0.001, 1)
-				if x >= 0.5:
+				if x > 0.4:
 					var target = ally1members[randi() % ally1members.size()]
 					if target.is_visible() == false:
 						target = ally1members[randi() % ally1members.size()]
 					if target.is_visible() == false:
 						target = ally1members[randi() % ally1members.size()]
 					fire_NPCNuke_red(member, target, group)
-				elif x <= 0.5:
+				elif x <= 0.6:
 					var target = ally3members[randi() % ally3members.size()]
 					if target.is_visible() == false:
 						target = ally3members[randi() % ally3members.size()]
@@ -365,14 +387,14 @@ func NPCfire(): #target acquisition
 				pass
 			else:
 				x = rand_range(0.001, 1)
-				if x >= 0.5:
+				if x > 0.4:
 					var target = ally1members[randi() % ally1members.size()]
 					if target.is_visible() == false:
 						target = ally1members[randi() % ally1members.size()]
 					if target.is_visible() == false:
 						target = ally1members[randi() % ally1members.size()]
 					fire_NPCNuke_red(member, target, group)
-				elif x <= 0.5:
+				elif x <= 0.6:
 					var target = ally2members[randi() % ally2members.size()]
 					if target.is_visible() == false:
 						target = ally2members[randi() % ally2members.size()]
@@ -381,6 +403,10 @@ func NPCfire(): #target acquisition
 					fire_NPCNuke_red(member, target, group)
 
 func fire_NPCNuke(_member, _target): #firing code for allies
+	#$Randtimer.start()
+	#if randtimervar == false:
+	#	randtimervar = true
+	#elif randtimervar == true:
 	target = _target
 	member = _member
 	$firemissile.play()
@@ -389,6 +415,13 @@ func fire_NPCNuke(_member, _target): #firing code for allies
 		return
 	emit_signal('shoot', Nuke, member.global_position, dir)
 	return
+	
+# $randtimer.start()
+# if randtimer variable is false
+# variable is true
+# if variable is true
+# rest of code
+#
 	
 func fire_NPCNuke_red(_member, _target, _group): #firing code for enemies
 	target = _target
@@ -402,7 +435,7 @@ func fire_NPCNuke_red(_member, _target, _group): #firing code for enemies
 	return
 
 	
-func fire_missile(_target):
+func fire_missile(_target): # firing code for player
 	target = 'Nations'.plus_file(_target).plus_file('Muzzle')
 	target = get_node(target)
 	$firemissile.play()
@@ -445,8 +478,8 @@ func _on_redshoot(Nuke, _position, _direction, group):
 
 func _on_GunTimer_timeout():
 	can_shoot = true
-	$GunTimer.wait_time = rand_range(0.5, 3)
-	pass # replace with function body
+	$GunTimer.wait_time = rand_range(0.8, 3)
+	$GunTimer2.wait_time = rand_range(1.5, 3.3)
 	
 func _on_ballettimer_timeout():
 	$ballet.play()
@@ -481,3 +514,14 @@ func allylist():
 
 func _on_startdelay_timeout():
 	global.startdelay = true
+
+
+func _on_Randtimer_timeout():
+	$Randtimer.start()
+	randtimervar = true
+
+
+	# randtimer timeout (autostart)
+# new randtime
+# randtimer variable is false
+

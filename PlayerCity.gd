@@ -28,6 +28,8 @@ func _process(delta):
 		print("game_over")
 	if global.startdelay == true:
 		_indicator()
+	if global.selfnuked == true:
+		$citydeath.play()
 
 func _on_Collisionstart_timeout():
 	var b = Player_Collision.instance()

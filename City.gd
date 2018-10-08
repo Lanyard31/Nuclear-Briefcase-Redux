@@ -13,19 +13,13 @@ var worldpop = false
 var deadpop
 var worldpopulationdisplayinit
 signal cityinitialcancel
+var ally1bonus = 5 #this is a multiplier
+var playerbonuspop = 5 #this is a multiplier
 
 func _ready():
-	randomize()
-	if worldpop == false:
-		worldpop = true
-	population = int(round(population * rand_range(0.6, 1.1)))
-	HPpopfull = population
-	emit_signal('cityinitial', population)
-	#self.set_scale
+	$popcatch.start()
 	
-	$citydelayer.wait_time = rand_range(0.2, 2.3)
-	$citydelayer.start()
-
+	
 	
 	#possibly buggy code
 #	if self.is_in_group("player"):
@@ -106,3 +100,20 @@ func _on_City_cityinitialcancel():
 
 func _on_citydelayer_timeout():
 	$AnimationPlayer.play("citybuild")
+
+
+func _on_popcatch_timeout():
+	if worldpop == false:
+		worldpop = true
+	population = int(round(population * rand_range(0.8, 1.2)))
+	if self.is_in_group('ally1'):
+		population = int(round(population * ally1bonus))
+	if self.is_in_group('player'):
+		population = int(round(population * playerbonuspop))
+	HPpopfull = population
+	emit_signal('cityinitial', population)
+	print(population)
+	#self.set_scale
+	
+	$citydelayer.wait_time = rand_range(0.2, 2.3)
+	$citydelayer.start()

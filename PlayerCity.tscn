@@ -169,7 +169,7 @@ autostart = false
 [node name="gameoversound" type="AudioStreamPlayer" parent="." index="8"]
 
 stream = SubResource( 1 )
-volume_db = -5.0
+volume_db = -7.0
 autoplay = false
 mix_target = 0
 bus = "Master"

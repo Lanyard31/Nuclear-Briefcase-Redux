@@ -34,6 +34,7 @@ func _on_exit_pressed():
 func _on_bootuptimer_timeout():
 	$exit.show()
 	$entertimer/ESC.show()
+	$muteicon.show()
 	global.howtoplay = 1
 	
 func _on_entertimer_timeout():
@@ -55,6 +56,7 @@ func _on_microtransition_timeout():
 	$exit.hide()
 	$sirentimer.start()
 	$entertimer/ESC.hide()
+	$muteicon.hide()
 	$bootuptimer.stop()
 	$enter.hide()
 	$alarmsound
