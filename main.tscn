@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://PlayerNuke.tscn" type="PackedScene" id=2]
@@ -55,50 +55,53 @@
 [ext_resource path="res://assets/sounds/player-loses.wav" type="AudioStream" id=53]
 [ext_resource path="res://assets/sounds/Nuclear Ballet.ogg" type="AudioStream" id=54]
 [ext_resource path="res://assets/assets_new/popups/popups/window_nuke-yourself.png" type="Texture" id=55]
-[ext_resource path="res://assets/assets_new/popups/popups/window_lose.png" type="Texture" id=56]
-[ext_resource path="res://assets/assets_new/popups/popups/start_READYGO.png" type="Texture" id=57]
-[ext_resource path="res://assets/assets_new/popups/popups/window_victory.png" type="Texture" id=58]
-[ext_resource path="res://assets/assets_new/popups/popups/window_restart-button-neutral.png" type="Texture" id=59]
-[ext_resource path="res://assets/assets_new/popups/popups/window_quit-button-neutral.png" type="Texture" id=60]
-[ext_resource path="res://assets/assets_new/popups/popups/window_triumph.png" type="Texture" id=61]
-[ext_resource path="res://assets/assets_new/popups/popups/window_restart-button-good.png" type="Texture" id=62]
-[ext_resource path="res://assets/assets_new/popups/popups/window_quit-button-good.png" type="Texture" id=63]
-[ext_resource path="res://assets/assets_new/Square.ttf" type="DynamicFontData" id=64]
-[ext_resource path="res://assets/last/ICON_MUTE.png" type="Texture" id=65]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00000.png" type="Texture" id=66]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00001.png" type="Texture" id=67]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00002.png" type="Texture" id=68]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00003.png" type="Texture" id=69]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00004.png" type="Texture" id=70]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00005.png" type="Texture" id=71]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00006.png" type="Texture" id=72]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00007.png" type="Texture" id=73]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00008.png" type="Texture" id=74]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00009.png" type="Texture" id=75]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00010.png" type="Texture" id=76]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00011.png" type="Texture" id=77]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00012.png" type="Texture" id=78]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00013.png" type="Texture" id=79]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00014.png" type="Texture" id=80]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00015.png" type="Texture" id=81]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00016.png" type="Texture" id=82]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00017.png" type="Texture" id=83]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00018.png" type="Texture" id=84]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00019.png" type="Texture" id=85]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00020.png" type="Texture" id=86]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00021.png" type="Texture" id=87]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00022.png" type="Texture" id=88]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00023.png" type="Texture" id=89]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00024.png" type="Texture" id=90]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00025.png" type="Texture" id=91]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00026.png" type="Texture" id=92]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00027.png" type="Texture" id=93]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00028.png" type="Texture" id=94]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00029.png" type="Texture" id=95]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00030.png" type="Texture" id=96]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00031.png" type="Texture" id=97]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00032.png" type="Texture" id=98]
-[ext_resource path="res://assets/sounds/powerup.wav" type="AudioStream" id=99]
+[ext_resource path="res://assets/assets_new/popups/popups/window_restart-button-bad.png" type="Texture" id=56]
+[ext_resource path="res://assets/assets_new/popups/popups/window_quit-button-bad.png" type="Texture" id=57]
+[ext_resource path="res://assets/assets_new/popups/popups/window_lose.png" type="Texture" id=58]
+[ext_resource path="res://assets/assets_new/popups/popups/start_READYGO.png" type="Texture" id=59]
+[ext_resource path="res://assets/assets_new/popups/popups/window_victory.png" type="Texture" id=60]
+[ext_resource path="res://assets/assets_new/popups/popups/window_restart-button-neutral.png" type="Texture" id=61]
+[ext_resource path="res://assets/assets_new/popups/popups/window_quit-button-neutral.png" type="Texture" id=62]
+[ext_resource path="res://assets/assets_new/popups/popups/window_triumph.png" type="Texture" id=63]
+[ext_resource path="res://assets/assets_new/popups/popups/window_restart-button-good.png" type="Texture" id=64]
+[ext_resource path="res://assets/assets_new/popups/popups/window_quit-button-good.png" type="Texture" id=65]
+[ext_resource path="res://assets/assets_new/Square.ttf" type="DynamicFontData" id=66]
+[ext_resource path="res://assets/last/ICON_MUTE.png" type="Texture" id=67]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00000.png" type="Texture" id=68]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00001.png" type="Texture" id=69]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00002.png" type="Texture" id=70]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00003.png" type="Texture" id=71]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00004.png" type="Texture" id=72]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00005.png" type="Texture" id=73]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00006.png" type="Texture" id=74]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00007.png" type="Texture" id=75]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00008.png" type="Texture" id=76]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00009.png" type="Texture" id=77]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00010.png" type="Texture" id=78]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00011.png" type="Texture" id=79]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00012.png" type="Texture" id=80]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00013.png" type="Texture" id=81]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00014.png" type="Texture" id=82]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00015.png" type="Texture" id=83]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00016.png" type="Texture" id=84]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00017.png" type="Texture" id=85]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00018.png" type="Texture" id=86]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00019.png" type="Texture" id=87]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00020.png" type="Texture" id=88]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00021.png" type="Texture" id=89]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00022.png" type="Texture" id=90]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00023.png" type="Texture" id=91]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00024.png" type="Texture" id=92]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00025.png" type="Texture" id=93]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00026.png" type="Texture" id=94]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00027.png" type="Texture" id=95]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00028.png" type="Texture" id=96]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00029.png" type="Texture" id=97]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00030.png" type="Texture" id=98]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00031.png" type="Texture" id=99]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00032.png" type="Texture" id=100]
+[ext_resource path="res://assets/sounds/powerup.wav" type="AudioStream" id=101]
+[ext_resource path="res://assets/sounds/info-blip.wav" type="AudioStream" id=102]
 
 [sub_resource type="Animation" id=1]
 
@@ -184,7 +187,7 @@ random_pitch = 1.1
 size = 0
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 64 )
+font_data = ExtResource( 66 )
 _sections_unfolded = [ "Font" ]
 
 [sub_resource type="DynamicFont" id=5]
@@ -192,7 +195,7 @@ _sections_unfolded = [ "Font" ]
 size = 10
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 64 )
+font_data = ExtResource( 66 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=6]
@@ -200,7 +203,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 64 )
+font_data = ExtResource( 66 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=7]
@@ -208,13 +211,13 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 15
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 64 )
+font_data = ExtResource( 66 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="SpriteFrames" id=8]
 
 animations = [ {
-"frames": [ ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ) ],
+"frames": [ ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ) ],
 "loop": false,
 "name": "default",
 "speed": 24.0
@@ -268,6 +271,8 @@ one_shot = true
 autostart = false
 
 [node name="Nations" type="Node" parent="." index="3"]
+
+editor/display_folded = true
 
 [node name="algeria" parent="Nations" index="0" instance=ExtResource( 6 )]
 
@@ -865,7 +870,7 @@ bus = "Master"
 [node name="playerloss" type="AudioStreamPlayer" parent="." index="5"]
 
 stream = ExtResource( 53 )
-volume_db = 0.0
+volume_db = -7.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -887,6 +892,7 @@ autostart = true
 
 [node name="self_nuke" type="TextureRect" parent="." index="8"]
 
+editor/display_folded = true
 visible = false
 modulate = Color( 1, 1, 1, 0.941176 )
 anchor_left = 0.0
@@ -907,8 +913,56 @@ texture = ExtResource( 55 )
 stretch_mode = 3
 _sections_unfolded = [ "Rect", "Visibility" ]
 
+[node name="reset" type="TextureButton" parent="self_nuke" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 402.0
+margin_right = 538.0
+margin_bottom = 502.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 56 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="quit" type="TextureButton" parent="self_nuke" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 568.0
+margin_top = 402.0
+margin_right = 971.0
+margin_bottom = 502.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 57 )
+_sections_unfolded = [ "Textures" ]
+
 [node name="gameover" type="TextureRect" parent="." index="9"]
 
+editor/display_folded = true
 visible = false
 modulate = Color( 1, 1, 1, 0.941176 )
 anchor_left = 0.0
@@ -925,9 +979,56 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 56 )
+texture = ExtResource( 58 )
 stretch_mode = 3
 _sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="reset" type="TextureButton" parent="gameover" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 402.0
+margin_right = 538.0
+margin_bottom = 502.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 56 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="quit" type="TextureButton" parent="gameover" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 568.0
+margin_top = 402.0
+margin_right = 971.0
+margin_bottom = 502.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 57 )
+_sections_unfolded = [ "Textures" ]
 
 [node name="startready" type="TextureRect" parent="." index="10"]
 
@@ -947,7 +1048,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 57 )
+texture = ExtResource( 59 )
 stretch_mode = 3
 _sections_unfolded = [ "Rect", "Visibility" ]
 
@@ -970,7 +1071,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 58 )
+texture = ExtResource( 60 )
 stretch_mode = 3
 _sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
 __meta__ = {
@@ -997,7 +1098,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 59 )
+texture_normal = ExtResource( 61 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="quit" type="TextureButton" parent="youwin" index="1"]
@@ -1021,7 +1122,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 60 )
+texture_normal = ExtResource( 62 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="youwinsogood" type="TextureRect" parent="." index="12"]
@@ -1042,7 +1143,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 61 )
+texture = ExtResource( 63 )
 stretch_mode = 3
 _sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
 __meta__ = {
@@ -1069,7 +1170,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 62 )
+texture_normal = ExtResource( 64 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="quit" type="TextureButton" parent="youwinsogood" index="1"]
@@ -1093,7 +1194,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 63 )
+texture_normal = ExtResource( 65 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="selfnuketimer" type="Timer" parent="." index="13"]
@@ -1106,8 +1207,8 @@ autostart = false
 [node name="doomsdaytimer" type="Timer" parent="." index="14"]
 
 process_mode = 1
-wait_time = 8.0
-one_shot = false
+wait_time = 5.0
+one_shot = true
 autostart = false
 
 [node name="popcounter" type="RichTextLabel" parent="." index="15"]
@@ -1243,7 +1344,7 @@ autostart = true
 
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 1794.23, 51.2636 )
-texture = ExtResource( 65 )
+texture = ExtResource( 67 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Randtimer" type="Timer" parent="." index="23"]
@@ -1265,11 +1366,26 @@ __meta__ = {
 
 [node name="cake" type="AudioStreamPlayer" parent="." index="25"]
 
-stream = ExtResource( 99 )
+stream = ExtResource( 101 )
 volume_db = -10.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="criticalwarning" type="AudioStreamPlayer" parent="." index="26"]
+
+stream = ExtResource( 102 )
+volume_db = -19.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="notdoomsdaytimer" type="Timer" parent="." index="27"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = true
+autostart = false
 
 [connection signal="redshoot" from="." to="." method="_on_redshoot"]
 
@@ -1280,6 +1396,10 @@ bus = "Master"
 [connection signal="timeout" from="GunTimer2" to="." method="_on_GunTimer_timeout"]
 
 [connection signal="timeout" from="ballettimer" to="." method="_on_ballettimer_timeout"]
+
+[connection signal="pressed" from="self_nuke/quit" to="." method="_on_quit_pressed"]
+
+[connection signal="pressed" from="gameover/quit" to="." method="_on_quit_pressed"]
 
 [connection signal="pressed" from="youwin/quit" to="." method="_on_quit_pressed"]
 
@@ -1294,5 +1414,9 @@ bus = "Master"
 [connection signal="timeout" from="startdelay" to="." method="_on_startdelay_timeout"]
 
 [connection signal="timeout" from="Randtimer" to="." method="_on_Randtimer_timeout"]
+
+[connection signal="animation_finished" from="selfnukeboom" to="." method="_on_selfnukeboom_animation_finished"]
+
+[connection signal="timeout" from="notdoomsdaytimer" to="." method="_on_notdoomsdaytimer_timeout"]
 
 

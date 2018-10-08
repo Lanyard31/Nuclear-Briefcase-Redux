@@ -9,6 +9,7 @@ var startdelay = false
 var mute = false
 var winstate = false
 var critical = false
+var playcritsound = true
 
 func ready():
 	pass

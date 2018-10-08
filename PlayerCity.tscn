@@ -188,10 +188,11 @@ autostart = true
 
 [node name="indicator" type="AnimatedSprite" parent="." index="12"]
 
+modulate = Color( 1, 1, 1, 0.657451 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 2 )
 animation = "default"
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="timeout" from="Collisionstart" to="." method="_on_Collisionstart_timeout"]
 

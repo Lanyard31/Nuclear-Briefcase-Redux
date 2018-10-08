@@ -1,5 +1,7 @@
 extends Node
 
+var entervar = false
+
 func _ready():
 	pass
 
@@ -26,6 +28,10 @@ func _process(delta):
 		else:
 			AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 0) #mute
 			global.mute = false
+	if Input.is_action_just_pressed("enter"):
+		if entervar == true:
+			entervar = false
+			_on_enter_pressed()
 
 func _on_exit_pressed():
 	$clicker.play()
@@ -39,6 +45,7 @@ func _on_bootuptimer_timeout():
 	
 func _on_entertimer_timeout():
 	$enter.show()
+	entervar = true
 	
 func _on_enter_pressed():
 	$enterwar.show()

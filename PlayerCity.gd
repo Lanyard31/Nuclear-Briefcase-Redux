@@ -19,9 +19,6 @@ func _process(delta):
 #		$skull.show()
 		global.playerdead = true
 		gameovercheck = true
-#		$Sprite.show()
-#		self.show()
-#		$gameover.show()
 		$gameovertimer.start()
 		$gameoversound.play()
 		global.playerdead == true

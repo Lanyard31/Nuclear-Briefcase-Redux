@@ -43,6 +43,7 @@ var ally3members
 var member
 var group = null
 var playercanshoot = true
+var playcritsound
 
 var Nations = ["algeria", "AUSTRALIA", "BURKINA_FASO", "brazil", "CHINA", "chile", "DENMARK", "dominican_republic", "EGYPT", "england", 
 			"FINLAND", "france", "GERMANY", "ghana", "HONDURAS", "hungary", "INDIA", "israel", "JAMAICA", "japan", "KOREA", "kazakhstan", 
@@ -59,6 +60,7 @@ func _ready():
 	global.startdelay = false
 	global.winstate = false
 	global.critical = false
+	global.playcritsound = true
 	
 	
 	#$GunTimer.wait_time = rand_range(0.5, 3)
@@ -139,16 +141,16 @@ func _ready():
 			if ally_assigner.is_in_group('ally1') == false:
 				if ally_assigner.is_in_group('ally2') == false:
 					if ally_assigner.is_in_group('ally3') == false:
-						print("caughtone")
+						#print("caughtone")
 						ally_assigner.add_to_group('ally2')
 						
 		
 	var ally1members = get_tree().get_nodes_in_group("ally1")
-	print("Ally Group 1:", ally1members)
+	#print("Ally Group 1:", ally1members)
 	var ally2members = get_tree().get_nodes_in_group("ally2")
-	print("Ally Group 2:", ally2members)
+	#print("Ally Group 2:", ally2members)
 	var ally3members = get_tree().get_nodes_in_group("ally3")
-	print("Ally Group 3:", ally3members)
+	#print("Ally Group 3:", ally3members)
 		
 	for member in ally1members: #blue
 		member.set_modulate(Color(0.0941176470588235, 0.9098039215686275, 0.7137254901960784))
@@ -174,18 +176,23 @@ func _process(delta):
 	if global.playerdead == true:
 		if global.selfnuked == false:
 			$gameover.show()
+			
 	
-	#population updater :  IS it here?
-	#if global.globalworldpop <= 0:
-	#	$pop.hide()
+	#population updater
 	
 	if global.globalworldpop >= 100000:
 		worldpopulationdisplay = str(global.globalworldpop)
 		$pop.text = (worldpopulationdisplay + "0k")
 		$pop.set_modulate(Color(1, 1, 1))
 	else:
+		global.critical == true
 		$pop.text = ("critical")
 		$pop.set_modulate(Color(0.9098039215686275, 0.0941176470588235, 0.5607843137254902))
+		if global.startdelay == true:
+			if global.playcritsound == true:
+				playcrit()
+				global.playcritsound = false
+
 	
 	
 #	$GunTimer.wait_time = rand_range(0.5, 3)
@@ -325,9 +332,31 @@ func _process(delta):
 		if Input.is_action_just_pressed("enter"):
 			if global.winstate == true:
 				global.winstate = false
+				global.selfnuked = false
+				global.playerdead == false
 				global.globalworldpop = 1 #part of youwin globals
 				get_tree().reload_current_scene()
-	
+				
+	if Input.is_action_just_pressed("enter"):
+		if global.selfnuked == true:
+			global.winstate = false
+			global.selfnuked = false
+			global.playerdead == false
+			global.playcritsound = true
+			global.globalworldpop = 1 #part of youwin globals
+			get_tree().reload_current_scene()
+	if Input.is_action_just_pressed("enter"):
+		if global.playerdead == true:
+			global.winstate = false
+			global.selfnuked = false
+			global.playerdead == false
+			global.playcritsound = true
+			global.globalworldpop = 1 #part of youwin globals
+			get_tree().reload_current_scene()
+
+
+#end of process loop
+
 func NPCfire(): #target acquisition
 	if can_shoot and global.startdelay == true:
 		can_shoot = false
@@ -444,13 +473,14 @@ func fire_missile(_target): # firing code for player
 	else:
 		dir = (target.global_position - ($PlayerCity/Muzzle.global_position)).normalized() * speed
 	if dir == Vector2(0, 0): #This means you nuked yourself
-		$self_nuke.show()
-		$selfnukeboom.play()
-		global.selfnuked = true
-		playercanshoot = false
-		$playerloss.play()
-		$selfnuketimer.start()
-		return
+		#$self_nuke.show()
+		#global.winstate = true #not really a win, but whatever
+		if global.winstate == false:
+			$selfnukeboom.play()
+			playercanshoot = false
+			$playerloss.play()
+			$selfnuketimer.start()
+			return
 	emit_signal('shoot', Nuke, $PlayerCity/Muzzle.global_position, dir)
 	return
 #		shoot signal leads to on_missile_fire
@@ -465,7 +495,10 @@ func _on_redshoot(Nuke, _position, _direction, group):
 	var b = Nuke.instance()
 	add_child(b)
 	b.start(_position, _direction, group)
-	$doomsdaytimer.start()
+	if global.critical == false:
+		$doomsdaytimer.start() # regular win
+	else:
+		$notdoomsdaytimer.start()
 	
 	#subtract one from missilecount
 	#create a missile at origin position
@@ -492,11 +525,12 @@ func _on_selfnuketimer_timeout():
 		global.selfnuked = false
 		global.startdelay = false
 		global.critical = false
+		global.playcritsound = true
 		get_tree().reload_current_scene()
 		
 
 func _on_doomsdaytimer_timeout(): # FAILSTATE, sort of its winning
-	if global.critical == true:
+	#if global.critical == true:
 		$youwin.show()
 		global.playerdead = false
 		global.globalworldpop = 1
@@ -505,18 +539,20 @@ func _on_doomsdaytimer_timeout(): # FAILSTATE, sort of its winning
 		global.startdelay = false
 		global.winstate = true
 		global.critical = false
+		global.playcritsound = true
 		print("youwin")
 		
-	if global.critical == false: # so good -- really winning
-		$youwinsogood.show()
-		$cake.play()
-		global.playerdead = false
-		global.ally1global = ""
-		global.selfnuked = false
-		global.startdelay = false
-		global.winstate = true
-		global.critical = false
-		print("youwin")
+#	if global.critical == false: # so good -- really winning
+#		$youwinsogood.show()
+#		$cake.play()
+#		global.playerdead = false
+#		global.ally1global = ""
+#		global.selfnuked = false
+#		global.startdelay = false
+#		global.winstate = true
+#		global.critical = false
+#		global.playcritsound = true
+#		print("youwin")
 	
 	
 func _on_allytimer_timeout():
@@ -529,6 +565,7 @@ func allylist():
 
 func _on_startdelay_timeout():
 	global.startdelay = true
+	global.playcritsound = true
 	$Worldmap/AnimationPlayer.play("mutefade")
 
 
@@ -545,3 +582,23 @@ func _on_Randtimer_timeout():
 func _on_quit_pressed():
 	if global.winstate == true:
 		get_tree().quit()
+
+
+func _on_selfnukeboom_animation_finished():
+	global.selfnuked = true
+	$self_nuke.show()
+
+func playcrit():
+	$criticalwarning.play()
+
+func _on_notdoomsdaytimer_timeout():
+		$youwinsogood.show()
+		$cake.play()
+		global.playerdead = false
+		global.ally1global = ""
+		global.selfnuked = false
+		global.startdelay = false
+		global.winstate = true
+		global.critical = false
+		global.playcritsound = true
+		print("youwin")
