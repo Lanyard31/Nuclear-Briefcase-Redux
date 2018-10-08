@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Intro.gd" type="Script" id=1]
 [ext_resource path="res://assets/assets_new/enter-war-room.ogv" type="VideoStream" id=2]
@@ -15,6 +15,9 @@
 [ext_resource path="res://assets/assets_new/quickgrab/window_how-to-play.png" type="Texture" id=13]
 [ext_resource path="res://assets/sounds/enter-war.wav" type="AudioStream" id=14]
 [ext_resource path="res://assets/sounds/alarm.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/assets_new/popups/popups/start_READYGO.png" type="Texture" id=16]
+[ext_resource path="res://assets/sounds/startgame-siren-reel.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/sounds/click.wav" type="AudioStream" id=18]
 
 [node name="Intro" type="Node"]
 
@@ -175,7 +178,7 @@ autostart = false
 [node name="transitiontomaintimer" type="Timer" parent="." index="8"]
 
 process_mode = 1
-wait_time = 7.9
+wait_time = 8.0
 one_shot = true
 autostart = false
 
@@ -208,6 +211,51 @@ wait_time = 0.8
 one_shot = true
 autostart = true
 
+[node name="startready" type="Sprite" parent="." index="13"]
+
+visible = false
+position = Vector2( 505, 500 )
+texture = ExtResource( 16 )
+centered = false
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="startreadypop" type="Timer" parent="." index="14"]
+
+process_mode = 1
+wait_time = 7.8
+one_shot = true
+autostart = false
+
+[node name="startgamesiren" type="AudioStreamPlayer" parent="." index="15"]
+
+stream = ExtResource( 17 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="sirentimer" type="Timer" parent="." index="16"]
+
+process_mode = 1
+wait_time = 0.6
+one_shot = true
+autostart = false
+
+[node name="clicker" type="AudioStreamPlayer" parent="." index="17"]
+
+stream = ExtResource( 18 )
+volume_db = -8.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="quitter" type="Timer" parent="." index="18"]
+
+process_mode = 1
+wait_time = 0.15
+one_shot = true
+autostart = false
+
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 
 [connection signal="pressed" from="enter" to="." method="_on_enter_pressed"]
@@ -221,5 +269,11 @@ autostart = true
 [connection signal="timeout" from="transitiontomaintimer" to="." method="_on_transitiontomaintimer_timeout"]
 
 [connection signal="timeout" from="startsound" to="." method="_on_startsound_timeout"]
+
+[connection signal="timeout" from="startreadypop" to="." method="_on_startreadypop_timeout"]
+
+[connection signal="timeout" from="sirentimer" to="." method="_on_sirentimer_timeout"]
+
+[connection signal="timeout" from="quitter" to="." method="_on_quitter_timeout"]
 
 

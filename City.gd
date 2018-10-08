@@ -21,6 +21,7 @@ func _ready():
 	population = int(round(population * rand_range(0.6, 2.4)))
 	HPpopfull = population
 	emit_signal('cityinitial', population)
+	$AnimationPlayer.play("citybuild")
 	#print(population)
 	
 #func _process(delta):

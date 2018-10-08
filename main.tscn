@@ -1,67 +1,69 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://PlayerNuke.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PlayerCity.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/assets_new/MAP_newworldmap2.png" type="Texture" id=4]
-[ext_resource path="res://NPCity.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/assets_new/new-icons/cityicons/ICONS-03.png" type="Texture" id=6]
-[ext_resource path="res://assets/assets_new/new-icons/cityicons/ICONS-04.png" type="Texture" id=7]
-[ext_resource path="res://assets/cityicons/ICONS-06.png" type="Texture" id=8]
-[ext_resource path="res://assets/cityicons/ICONS-05.png" type="Texture" id=9]
-[ext_resource path="res://assets/cityicons/ICONS-14.png" type="Texture" id=10]
-[ext_resource path="res://assets/cityicons/ICONS-13.png" type="Texture" id=11]
-[ext_resource path="res://assets/cityicons/ICONS-08.png" type="Texture" id=12]
-[ext_resource path="res://assets/cityicons/ICONS-07.png" type="Texture" id=13]
-[ext_resource path="res://assets/cityicons/ICONS-10.png" type="Texture" id=14]
-[ext_resource path="res://assets/cityicons/ICONS-09.png" type="Texture" id=15]
-[ext_resource path="res://assets/cityicons/ICONS-12.png" type="Texture" id=16]
-[ext_resource path="res://assets/cityicons/ICONS-11.png" type="Texture" id=17]
-[ext_resource path="res://assets/cityicons/ICONS-16.png" type="Texture" id=18]
-[ext_resource path="res://assets/cityicons/ICONS-15.png" type="Texture" id=19]
-[ext_resource path="res://assets/cityicons/ICONS-18.png" type="Texture" id=20]
-[ext_resource path="res://assets/cityicons/ICONS-17.png" type="Texture" id=21]
-[ext_resource path="res://assets/cityicons/ICONS-20.png" type="Texture" id=22]
-[ext_resource path="res://assets/cityicons/ICONS-19.png" type="Texture" id=23]
-[ext_resource path="res://assets/cityicons/ICONS-22.png" type="Texture" id=24]
-[ext_resource path="res://assets/cityicons/ICONS-21.png" type="Texture" id=25]
-[ext_resource path="res://assets/cityicons/ICONS-24.png" type="Texture" id=26]
-[ext_resource path="res://assets/cityicons/ICONS-23.png" type="Texture" id=27]
-[ext_resource path="res://assets/cityicons/ICONS-26.png" type="Texture" id=28]
-[ext_resource path="res://assets/cityicons/ICONS-25.png" type="Texture" id=29]
-[ext_resource path="res://assets/cityicons/ICONS-28.png" type="Texture" id=30]
-[ext_resource path="res://assets/cityicons/ICONS-27.png" type="Texture" id=31]
-[ext_resource path="res://assets/cityicons/ICONS-30.png" type="Texture" id=32]
-[ext_resource path="res://assets/cityicons/ICONS-29.png" type="Texture" id=33]
-[ext_resource path="res://assets/cityicons/ICONS-32.png" type="Texture" id=34]
-[ext_resource path="res://assets/cityicons/ICONS-34.png" type="Texture" id=35]
-[ext_resource path="res://assets/cityicons/ICONS-33.png" type="Texture" id=36]
-[ext_resource path="res://assets/cityicons/ICONS-36.png" type="Texture" id=37]
-[ext_resource path="res://assets/cityicons/ICONS-38.png" type="Texture" id=38]
-[ext_resource path="res://assets/cityicons/ICONS-40.png" type="Texture" id=39]
-[ext_resource path="res://assets/cityicons/ICONS-39.png" type="Texture" id=40]
-[ext_resource path="res://assets/cityicons/ICONS-42.png" type="Texture" id=41]
-[ext_resource path="res://assets/cityicons/ICONS-41.png" type="Texture" id=42]
-[ext_resource path="res://assets/cityicons/ICONS-44.png" type="Texture" id=43]
-[ext_resource path="res://assets/cityicons/ICONS-43.png" type="Texture" id=44]
-[ext_resource path="res://assets/cityicons/ICONS-46.png" type="Texture" id=45]
-[ext_resource path="res://assets/cityicons/ICONS-45.png" type="Texture" id=46]
-[ext_resource path="res://assets/cityicons/ICONS-52.png" type="Texture" id=47]
-[ext_resource path="res://assets/cityicons/ICONS-54.png" type="Texture" id=48]
-[ext_resource path="res://assets/cityicons/ICONS-53.png" type="Texture" id=49]
-[ext_resource path="res://assets/cityicons/ICONS-37.png" type="Texture" id=50]
-[ext_resource path="res://assets/sounds/boof.wav" type="AudioStream" id=51]
-[ext_resource path="res://assets/sounds/player-loses.wav" type="AudioStream" id=52]
-[ext_resource path="res://assets/sounds/Nuclear Ballet.ogg" type="AudioStream" id=53]
-[ext_resource path="res://assets/assets_new/popups/popups/window_nuke-yourself.png" type="Texture" id=54]
-[ext_resource path="res://assets/assets_new/popups/popups/window_lose.png" type="Texture" id=55]
-[ext_resource path="res://assets/assets_new/popups/popups/window_victory.png" type="Texture" id=56]
-[ext_resource path="res://assets/assets_new/Square.ttf" type="DynamicFontData" id=57]
+[ext_resource path="res://assets/last/map-border_newworldmap.png" type="Texture" id=5]
+[ext_resource path="res://NPCity.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/assets_new/new-icons/cityicons/ICONS-03.png" type="Texture" id=7]
+[ext_resource path="res://assets/assets_new/new-icons/cityicons/ICONS-04.png" type="Texture" id=8]
+[ext_resource path="res://assets/cityicons/ICONS-06.png" type="Texture" id=9]
+[ext_resource path="res://assets/cityicons/ICONS-05.png" type="Texture" id=10]
+[ext_resource path="res://assets/cityicons/ICONS-14.png" type="Texture" id=11]
+[ext_resource path="res://assets/cityicons/ICONS-13.png" type="Texture" id=12]
+[ext_resource path="res://assets/cityicons/ICONS-08.png" type="Texture" id=13]
+[ext_resource path="res://assets/cityicons/ICONS-07.png" type="Texture" id=14]
+[ext_resource path="res://assets/cityicons/ICONS-10.png" type="Texture" id=15]
+[ext_resource path="res://assets/cityicons/ICONS-09.png" type="Texture" id=16]
+[ext_resource path="res://assets/cityicons/ICONS-12.png" type="Texture" id=17]
+[ext_resource path="res://assets/cityicons/ICONS-11.png" type="Texture" id=18]
+[ext_resource path="res://assets/cityicons/ICONS-16.png" type="Texture" id=19]
+[ext_resource path="res://assets/cityicons/ICONS-15.png" type="Texture" id=20]
+[ext_resource path="res://assets/cityicons/ICONS-18.png" type="Texture" id=21]
+[ext_resource path="res://assets/cityicons/ICONS-17.png" type="Texture" id=22]
+[ext_resource path="res://assets/cityicons/ICONS-20.png" type="Texture" id=23]
+[ext_resource path="res://assets/cityicons/ICONS-19.png" type="Texture" id=24]
+[ext_resource path="res://assets/cityicons/ICONS-22.png" type="Texture" id=25]
+[ext_resource path="res://assets/cityicons/ICONS-21.png" type="Texture" id=26]
+[ext_resource path="res://assets/cityicons/ICONS-24.png" type="Texture" id=27]
+[ext_resource path="res://assets/cityicons/ICONS-23.png" type="Texture" id=28]
+[ext_resource path="res://assets/cityicons/ICONS-26.png" type="Texture" id=29]
+[ext_resource path="res://assets/cityicons/ICONS-25.png" type="Texture" id=30]
+[ext_resource path="res://assets/cityicons/ICONS-28.png" type="Texture" id=31]
+[ext_resource path="res://assets/cityicons/ICONS-27.png" type="Texture" id=32]
+[ext_resource path="res://assets/cityicons/ICONS-30.png" type="Texture" id=33]
+[ext_resource path="res://assets/cityicons/ICONS-29.png" type="Texture" id=34]
+[ext_resource path="res://assets/cityicons/ICONS-32.png" type="Texture" id=35]
+[ext_resource path="res://assets/cityicons/ICONS-34.png" type="Texture" id=36]
+[ext_resource path="res://assets/cityicons/ICONS-33.png" type="Texture" id=37]
+[ext_resource path="res://assets/cityicons/ICONS-36.png" type="Texture" id=38]
+[ext_resource path="res://assets/cityicons/ICONS-38.png" type="Texture" id=39]
+[ext_resource path="res://assets/cityicons/ICONS-40.png" type="Texture" id=40]
+[ext_resource path="res://assets/cityicons/ICONS-39.png" type="Texture" id=41]
+[ext_resource path="res://assets/cityicons/ICONS-42.png" type="Texture" id=42]
+[ext_resource path="res://assets/cityicons/ICONS-41.png" type="Texture" id=43]
+[ext_resource path="res://assets/cityicons/ICONS-44.png" type="Texture" id=44]
+[ext_resource path="res://assets/cityicons/ICONS-43.png" type="Texture" id=45]
+[ext_resource path="res://assets/cityicons/ICONS-46.png" type="Texture" id=46]
+[ext_resource path="res://assets/cityicons/ICONS-45.png" type="Texture" id=47]
+[ext_resource path="res://assets/cityicons/ICONS-52.png" type="Texture" id=48]
+[ext_resource path="res://assets/cityicons/ICONS-54.png" type="Texture" id=49]
+[ext_resource path="res://assets/cityicons/ICONS-53.png" type="Texture" id=50]
+[ext_resource path="res://assets/cityicons/ICONS-37.png" type="Texture" id=51]
+[ext_resource path="res://assets/sounds/boof.wav" type="AudioStream" id=52]
+[ext_resource path="res://assets/sounds/player-loses.wav" type="AudioStream" id=53]
+[ext_resource path="res://assets/sounds/Nuclear Ballet.ogg" type="AudioStream" id=54]
+[ext_resource path="res://assets/assets_new/popups/popups/window_nuke-yourself.png" type="Texture" id=55]
+[ext_resource path="res://assets/assets_new/popups/popups/window_lose.png" type="Texture" id=56]
+[ext_resource path="res://assets/assets_new/popups/popups/start_READYGO.png" type="Texture" id=57]
+[ext_resource path="res://assets/assets_new/popups/popups/window_victory.png" type="Texture" id=58]
+[ext_resource path="res://assets/assets_new/Square.ttf" type="DynamicFontData" id=59]
 
 [sub_resource type="Animation" id=1]
 
 resource_name = "fuzzy"
-length = 0.4
+length = 1.2
 loop = false
 step = 0.01
 tracks/0/type = "value"
@@ -88,10 +90,34 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true, false, true ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../startready:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.13, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../startready:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.674039 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="AudioStreamRandomPitch" id=2]
 
-audio_stream = ExtResource( 51 )
+audio_stream = ExtResource( 52 )
 random_pitch = 1.1
 
 [sub_resource type="DynamicFont" id=3]
@@ -99,7 +125,7 @@ random_pitch = 1.1
 size = 0
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 57 )
+font_data = ExtResource( 59 )
 _sections_unfolded = [ "Font" ]
 
 [sub_resource type="DynamicFont" id=4]
@@ -107,7 +133,7 @@ _sections_unfolded = [ "Font" ]
 size = 10
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 57 )
+font_data = ExtResource( 59 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=5]
@@ -115,7 +141,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 57 )
+font_data = ExtResource( 59 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=6]
@@ -123,7 +149,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 15
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 57 )
+font_data = ExtResource( 59 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Root" type="Node" index="0"]
@@ -134,7 +160,7 @@ City = ExtResource( 3 )
 
 [node name="Worldmap" type="Sprite" parent="." index="0"]
 
-modulate = Color( 1, 1, 1, 0.143647 )
+modulate = Color( 1, 1, 1, 1 )
 z_index = -2
 texture = ExtResource( 4 )
 centered = false
@@ -153,6 +179,12 @@ playback_speed = 1.0
 anims/fuzzy = SubResource( 1 )
 blend_times = [  ]
 
+[node name="border" type="Sprite" parent="Worldmap" index="1"]
+
+texture = ExtResource( 5 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
 [node name="GunTimer" type="Timer" parent="." index="1"]
 
 process_mode = 1
@@ -164,454 +196,499 @@ autostart = false
 
 editor/display_folded = true
 
-[node name="algeria" parent="Nations" index="0" instance=ExtResource( 5 )]
+[node name="algeria" parent="Nations" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 896.612, 532.512 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/algeria" index="3"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="AUSTRALIA" parent="Nations" index="1" instance=ExtResource( 5 )]
+[node name="AUSTRALIA" parent="Nations" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 1650.7, 812.697 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/AUSTRALIA" index="3"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="brazil" parent="Nations" index="2" instance=ExtResource( 5 )]
+[node name="brazil" parent="Nations" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 528.675, 726.52 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/brazil" index="3"]
 
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="BURKINA_FASO" parent="Nations" index="3" instance=ExtResource( 5 )]
+[node name="BURKINA_FASO" parent="Nations" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 759.616, 667.053 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/BURKINA_FASO" index="3"]
 
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="FINLAND" parent="Nations" index="4" instance=ExtResource( 5 )]
+[node name="FINLAND" parent="Nations" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 1037.94, 130.585 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/FINLAND" index="3"]
 
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="france" parent="Nations" index="5" instance=ExtResource( 5 )]
+[node name="france" parent="Nations" index="5" instance=ExtResource( 6 )]
 
 position = Vector2( 839.167, 387.682 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/france" index="3"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="CHINA" parent="Nations" index="6" instance=ExtResource( 5 )]
+[node name="CHINA" parent="Nations" index="6" instance=ExtResource( 6 )]
 
 position = Vector2( 1532.79, 407.799 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/CHINA" index="3"]
 
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="chile" parent="Nations" index="7" instance=ExtResource( 5 )]
+[node name="chile" parent="Nations" index="7" instance=ExtResource( 6 )]
 
 position = Vector2( 457.592, 892.517 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/chile" index="3"]
 
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="DENMARK" parent="Nations" index="8" instance=ExtResource( 5 )]
+[node name="DENMARK" parent="Nations" index="8" instance=ExtResource( 6 )]
 
 position = Vector2( 901.365, 241.803 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/DENMARK" index="3"]
 
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="dominican_republic" parent="Nations" index="9" instance=ExtResource( 5 )]
+[node name="dominican_republic" parent="Nations" index="9" instance=ExtResource( 6 )]
 
 position = Vector2( 354.202, 556.113 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/dominican_republic" index="3"]
 
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="EGYPT" parent="Nations" index="10" instance=ExtResource( 5 )]
+[node name="EGYPT" parent="Nations" index="10" instance=ExtResource( 6 )]
 
 position = Vector2( 1055.1, 573.998 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/EGYPT" index="3"]
 
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="england" parent="Nations" index="11" instance=ExtResource( 5 )]
+[node name="england" parent="Nations" index="11" instance=ExtResource( 6 )]
 
 position = Vector2( 783.438, 293.338 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/england" index="3"]
 
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="GERMANY" parent="Nations" index="12" instance=ExtResource( 5 )]
+[node name="GERMANY" parent="Nations" index="12" instance=ExtResource( 6 )]
 
 position = Vector2( 886.081, 316.749 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/GERMANY" index="3"]
 
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="ghana" parent="Nations" index="13" instance=ExtResource( 5 )]
+[node name="ghana" parent="Nations" index="13" instance=ExtResource( 6 )]
 
 position = Vector2( 830.236, 710.732 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/ghana" index="3"]
 
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="HONDURAS" parent="Nations" index="14" instance=ExtResource( 5 )]
+[node name="HONDURAS" parent="Nations" index="14" instance=ExtResource( 6 )]
 
 position = Vector2( 278.037, 586.808 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/HONDURAS" index="3"]
 
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="hungary" parent="Nations" index="15" instance=ExtResource( 5 )]
+[node name="hungary" parent="Nations" index="15" instance=ExtResource( 6 )]
 
 position = Vector2( 1000.84, 293.666 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/hungary" index="3"]
 
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="INDIA" parent="Nations" index="16" instance=ExtResource( 5 )]
+[node name="INDIA" parent="Nations" index="16" instance=ExtResource( 6 )]
 
 position = Vector2( 1446.41, 557.26 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/INDIA" index="3"]
 
-texture = ExtResource( 22 )
+texture = ExtResource( 23 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="israel" parent="Nations" index="17" instance=ExtResource( 5 )]
+[node name="israel" parent="Nations" index="17" instance=ExtResource( 6 )]
 
 position = Vector2( 1149.92, 520.904 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/israel" index="3"]
 
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="JAMAICA" parent="Nations" index="18" instance=ExtResource( 5 )]
+[node name="JAMAICA" parent="Nations" index="18" instance=ExtResource( 6 )]
 
 position = Vector2( 407.135, 584.679 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/JAMAICA" index="3"]
 
-texture = ExtResource( 24 )
+texture = ExtResource( 25 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="japan" parent="Nations" index="19" instance=ExtResource( 5 )]
+[node name="japan" parent="Nations" index="19" instance=ExtResource( 6 )]
 
 position = Vector2( 1762.26, 406.779 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/japan" index="3"]
 
-texture = ExtResource( 25 )
+texture = ExtResource( 26 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="KOREA" parent="Nations" index="20" instance=ExtResource( 5 )]
+[node name="KOREA" parent="Nations" index="20" instance=ExtResource( 6 )]
 
 position = Vector2( 1686.4, 365.86 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/KOREA" index="3"]
 
-texture = ExtResource( 26 )
+texture = ExtResource( 27 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="kazakhstan" parent="Nations" index="21" instance=ExtResource( 5 )]
+[node name="kazakhstan" parent="Nations" index="21" instance=ExtResource( 6 )]
 
 position = Vector2( 1438.19, 302.98 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/kazakhstan" index="3"]
 
-texture = ExtResource( 27 )
+texture = ExtResource( 28 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="LESOTHO" parent="Nations" index="22" instance=ExtResource( 5 )]
+[node name="LESOTHO" parent="Nations" index="22" instance=ExtResource( 6 )]
 
 position = Vector2( 1011.02, 970.693 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/LESOTHO" index="3"]
 
-texture = ExtResource( 28 )
+texture = ExtResource( 29 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="lithuania" parent="Nations" index="23" instance=ExtResource( 5 )]
+[node name="lithuania" parent="Nations" index="23" instance=ExtResource( 6 )]
 
 position = Vector2( 1057.32, 229.486 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/lithuania" index="3"]
 
-texture = ExtResource( 29 )
+texture = ExtResource( 30 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="MADAGASCAR" parent="Nations" index="24" instance=ExtResource( 5 )]
+[node name="MADAGASCAR" parent="Nations" index="24" instance=ExtResource( 6 )]
 
 position = Vector2( 1195.25, 942.738 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/MADAGASCAR" index="3"]
 
-texture = ExtResource( 30 )
+texture = ExtResource( 31 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="mexico" parent="Nations" index="25" instance=ExtResource( 5 )]
+[node name="mexico" parent="Nations" index="25" instance=ExtResource( 6 )]
 
 position = Vector2( 208.768, 506.004 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/mexico" index="3"]
 
-texture = ExtResource( 31 )
+texture = ExtResource( 32 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="NEW_ZEALAND" parent="Nations" index="26" instance=ExtResource( 5 )]
+[node name="NEW_ZEALAND" parent="Nations" index="26" instance=ExtResource( 6 )]
 
 position = Vector2( 1793.28, 886.863 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/NEW_ZEALAND" index="3"]
 
-texture = ExtResource( 32 )
+texture = ExtResource( 33 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="norway" parent="Nations" index="27" instance=ExtResource( 5 )]
+[node name="norway" parent="Nations" index="27" instance=ExtResource( 6 )]
 
 position = Vector2( 897.476, 148.464 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/norway" index="3"]
 
-texture = ExtResource( 33 )
+texture = ExtResource( 34 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="OMAN" parent="Nations" index="28" instance=ExtResource( 5 )]
+[node name="OMAN" parent="Nations" index="28" instance=ExtResource( 6 )]
 
 position = Vector2( 1343.39, 609.154 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/OMAN" index="3"]
 
-texture = ExtResource( 34 )
+texture = ExtResource( 35 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="PAKISTAN" parent="Nations" index="29" instance=ExtResource( 5 )]
+[node name="PAKISTAN" parent="Nations" index="29" instance=ExtResource( 6 )]
 
 position = Vector2( 1355.02, 507.655 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/PAKISTAN" index="3"]
 
-texture = ExtResource( 35 )
+texture = ExtResource( 36 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="panama" parent="Nations" index="30" instance=ExtResource( 5 )]
+[node name="panama" parent="Nations" index="30" instance=ExtResource( 6 )]
 
 position = Vector2( 337.126, 628.83 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/panama" index="3"]
 
-texture = ExtResource( 36 )
+texture = ExtResource( 37 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="QATAR" parent="Nations" index="31" instance=ExtResource( 5 )]
+[node name="QATAR" parent="Nations" index="31" instance=ExtResource( 6 )]
 
 position = Vector2( 1178.38, 629.888 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/QATAR" index="3"]
 
-texture = ExtResource( 37 )
+texture = ExtResource( 38 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="ROMANIA" parent="Nations" index="32" instance=ExtResource( 5 )]
+[node name="ROMANIA" parent="Nations" index="32" instance=ExtResource( 6 )]
 
 position = Vector2( 1042.03, 376.331 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/ROMANIA" index="3"]
 
-texture = ExtResource( 38 )
+texture = ExtResource( 39 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="SAUDI_ARABIA" parent="Nations" index="33" instance=ExtResource( 5 )]
+[node name="SAUDI_ARABIA" parent="Nations" index="33" instance=ExtResource( 6 )]
 
 position = Vector2( 1238.22, 563.594 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/SAUDI_ARABIA" index="3"]
 
-texture = ExtResource( 39 )
+texture = ExtResource( 40 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="switzerland" parent="Nations" index="34" instance=ExtResource( 5 )]
+[node name="switzerland" parent="Nations" index="34" instance=ExtResource( 6 )]
 
 position = Vector2( 940.627, 361.903 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/switzerland" index="3"]
 
-texture = ExtResource( 40 )
+texture = ExtResource( 41 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="THAILAND" parent="Nations" index="35" instance=ExtResource( 5 )]
+[node name="THAILAND" parent="Nations" index="35" instance=ExtResource( 6 )]
 
 position = Vector2( 1541.22, 611.594 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/THAILAND" index="3"]
 
-texture = ExtResource( 41 )
+texture = ExtResource( 42 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="turkey" parent="Nations" index="36" instance=ExtResource( 5 )]
+[node name="turkey" parent="Nations" index="36" instance=ExtResource( 6 )]
 
 position = Vector2( 1117.06, 446.698 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/turkey" index="3"]
 
-texture = ExtResource( 42 )
+texture = ExtResource( 43 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="UKRAINE" parent="Nations" index="37" instance=ExtResource( 5 )]
+[node name="UKRAINE" parent="Nations" index="37" instance=ExtResource( 6 )]
 
 position = Vector2( 1276.22, 200.594 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/UKRAINE" index="3"]
 
-texture = ExtResource( 43 )
+texture = ExtResource( 44 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="united_states" parent="Nations" index="38" instance=ExtResource( 5 )]
+[node name="united_states" parent="Nations" index="38" instance=ExtResource( 6 )]
 
 position = Vector2( 291.315, 406.498 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/united_states" index="3"]
 
-texture = ExtResource( 44 )
+texture = ExtResource( 45 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="VENEZUELA" parent="Nations" index="39" instance=ExtResource( 5 )]
+[node name="VENEZUELA" parent="Nations" index="39" instance=ExtResource( 6 )]
 
 position = Vector2( 460.217, 629.594 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/VENEZUELA" index="3"]
 
-texture = ExtResource( 45 )
+texture = ExtResource( 46 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="vietnam" parent="Nations" index="40" instance=ExtResource( 5 )]
+[node name="vietnam" parent="Nations" index="40" instance=ExtResource( 6 )]
 
 position = Vector2( 1599.22, 544.594 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/vietnam" index="3"]
 
-texture = ExtResource( 46 )
+texture = ExtResource( 47 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="YEMEN" parent="Nations" index="41" instance=ExtResource( 5 )]
+[node name="YEMEN" parent="Nations" index="41" instance=ExtResource( 6 )]
 
 position = Vector2( 1262.81, 653.384 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/YEMEN" index="3"]
 
-texture = ExtResource( 47 )
+texture = ExtResource( 48 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="ZAMBIA" parent="Nations" index="42" instance=ExtResource( 5 )]
+[node name="ZAMBIA" parent="Nations" index="42" instance=ExtResource( 6 )]
 
 position = Vector2( 1034.72, 847.063 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/ZAMBIA" index="3"]
 
-texture = ExtResource( 48 )
+texture = ExtResource( 49 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="zimbabwe" parent="Nations" index="43" instance=ExtResource( 5 )]
+[node name="zimbabwe" parent="Nations" index="43" instance=ExtResource( 6 )]
 
 position = Vector2( 1085.2, 899.563 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/zimbabwe" index="3"]
 
-texture = ExtResource( 49 )
+texture = ExtResource( 50 )
 _sections_unfolded = [ "Offset" ]
 
-[node name="russia" parent="Nations" index="44" instance=ExtResource( 5 )]
+[node name="russia" parent="Nations" index="44" instance=ExtResource( 6 )]
 
 position = Vector2( 1545.46, 214.395 )
+scale = Vector2( 1, 1 )
 Skull = null
 
 [node name="Sprite2" type="Sprite" parent="Nations/russia" index="3"]
 
-texture = ExtResource( 50 )
+texture = ExtResource( 51 )
 _sections_unfolded = [ "Offset" ]
 
 [node name="firemissile" type="AudioStreamPlayer" parent="." index="3"]
@@ -624,7 +701,7 @@ bus = "Master"
 
 [node name="playerloss" type="AudioStreamPlayer" parent="." index="4"]
 
-stream = ExtResource( 52 )
+stream = ExtResource( 53 )
 volume_db = 0.0
 autoplay = false
 mix_target = 0
@@ -632,7 +709,7 @@ bus = "Master"
 
 [node name="ballet" type="AudioStreamPlayer" parent="." index="5"]
 
-stream = ExtResource( 53 )
+stream = ExtResource( 54 )
 volume_db = -10.0
 autoplay = false
 mix_target = 0
@@ -663,7 +740,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 54 )
+texture = ExtResource( 55 )
 stretch_mode = 3
 _sections_unfolded = [ "Rect", "Visibility" ]
 
@@ -685,11 +762,33 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 55 )
+texture = ExtResource( 56 )
 stretch_mode = 3
 _sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="youwin" type="TextureRect" parent="." index="9"]
+[node name="startready" type="TextureRect" parent="." index="9"]
+
+visible = false
+modulate = Color( 1, 1, 1, 0.674039 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 505.0
+margin_top = 500.0
+margin_right = 1475.0
+margin_bottom = 879.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 57 )
+stretch_mode = 3
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="youwin" type="TextureRect" parent="." index="10"]
 
 visible = false
 modulate = Color( 1, 1, 1, 0.941176 )
@@ -707,25 +806,25 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 56 )
+texture = ExtResource( 58 )
 stretch_mode = 3
 _sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
 
-[node name="selfnuketimer" type="Timer" parent="." index="10"]
+[node name="selfnuketimer" type="Timer" parent="." index="11"]
 
 process_mode = 1
 wait_time = 8.0
 one_shot = true
 autostart = false
 
-[node name="doomsdaytimer" type="Timer" parent="." index="11"]
+[node name="doomsdaytimer" type="Timer" parent="." index="12"]
 
 process_mode = 1
 wait_time = 10.0
 one_shot = false
 autostart = false
 
-[node name="popcounter" type="RichTextLabel" parent="." index="12"]
+[node name="popcounter" type="RichTextLabel" parent="." index="13"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -756,7 +855,7 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="allyheader" type="RichTextLabel" parent="." index="13"]
+[node name="allyheader" type="RichTextLabel" parent="." index="14"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -787,7 +886,7 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="pop" type="Label" parent="." index="14"]
+[node name="pop" type="Label" parent="." index="15"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -810,21 +909,21 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Poptimer" type="Timer" parent="." index="15"]
+[node name="Poptimer" type="Timer" parent="." index="16"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = false
 
-[node name="allytimer" type="Timer" parent="." index="16"]
+[node name="allytimer" type="Timer" parent="." index="17"]
 
 process_mode = 1
 wait_time = 0.1
 one_shot = true
 autostart = true
 
-[node name="allylist" type="Label" parent="." index="17"]
+[node name="allylist" type="Label" parent="." index="18"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -833,7 +932,7 @@ anchor_bottom = 0.0
 margin_left = 183.0
 margin_top = 782.0
 margin_right = 364.0
-margin_bottom = 913.0
+margin_bottom = 941.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -841,10 +940,18 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 6 )
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="startdelay" type="Timer" parent="." index="19"]
+
+process_mode = 1
+wait_time = 2.8
+one_shot = true
+autostart = true
 
 [connection signal="redshoot" from="." to="." method="_on_redshoot"]
 
@@ -859,5 +966,7 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 [connection signal="timeout" from="doomsdaytimer" to="." method="_on_doomsdaytimer_timeout"]
 
 [connection signal="timeout" from="allytimer" to="." method="_on_allytimer_timeout"]
+
+[connection signal="timeout" from="startdelay" to="." method="_on_startdelay_timeout"]
 
 

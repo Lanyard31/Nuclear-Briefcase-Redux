@@ -5,6 +5,7 @@ var playerdead = false
 var howtoplay = 0
 var ally1global = ""
 var selfnuked = false
+var startdelay = false
 
 func ready():
 	pass

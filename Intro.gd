@@ -12,14 +12,17 @@ func _process(delta):
 			$howtoplay.show()
 			$entertimer/ESC.hide()
 			$entertimer/ESCback.show()
+			$clicker.play()
 		else:
 			global.howtoplay = 1
 			$howtoplay.hide()
 			$entertimer/ESCback.hide()
 			$entertimer/ESC.show()
+			$clicker.play()
 
 func _on_exit_pressed():
-	get_tree().quit() 
+	$clicker.play()
+	$quitter.start() 
 
 func _on_bootuptimer_timeout():
 	$exit.show()
@@ -37,19 +40,31 @@ func _on_enter_pressed():
 	$howtoplay.hide()
 	$entertimer/ESCback.hide()
 	$entertimer/ESC.hide()
+	$clicker.play()
 	
 	
 func _on_microtransition_timeout():
 	$bootup.hide()
 	$exit.hide()
+	$sirentimer.start()
 	$entertimer/ESC.hide()
 	$bootuptimer.stop()
 	$enter.hide()
 	$alarmsound
 	$transitiontomaintimer.start()
+	$startreadypop.start()
 
 func _on_transitiontomaintimer_timeout():
 	get_tree().change_scene("res://main.tscn")
 
 func _on_startsound_timeout():
 	$enterwarsound.play()
+
+func _on_startreadypop_timeout():
+	$startready.show()
+	
+func _on_sirentimer_timeout():
+	$startgamesiren.play()
+	
+func _on_quitter_timeout():
+	get_tree().quit()

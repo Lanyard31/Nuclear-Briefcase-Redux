@@ -16,7 +16,7 @@ var position
 var _position
 var _direction
 var target
-var speed = 4
+var speed = 2.2
 var spawncity
 var spawnhere
 var spawnherespot = Vector2()
@@ -150,7 +150,8 @@ func _ready():
 	for member in ally2members: #red
 		member.set_modulate(Color(0.9098039215686275, 0.0941176470588235, 0.5607843137254902))
 	for member in ally3members: #yellow
-		member.set_modulate(Color(0.9372549019607843, 0.2627450980392157, 0.1058823529411765)) 
+		member.set_modulate(Color(0.9372549019607843, 0.2627450980392157, 0.1058823529411765))
+	$PlayerCity.set_modulate(Color(1, 1, 1))
 		
 		
 	#add_to_group(ally1)
@@ -296,7 +297,7 @@ func _process(delta):
 			fire_missile('zimbabwe')
 	
 func NPCfire(): #target acquisition
-	if can_shoot:
+	if can_shoot and global.startdelay == true:
 		can_shoot = false
 		$GunTimer.start()
 		var ally1members = get_tree().get_nodes_in_group("ally1")
@@ -439,11 +440,21 @@ func _on_ballettimer_timeout():
 	pass
 	
 func _on_selfnuketimer_timeout():
+	global.playerdead = false
+	global.globalworldpop = 1
+	global.ally1global = ""
+	global.selfnuked = false
+	global.startdelay = false
 	get_tree().reload_current_scene()
 	
 
-func _on_doomsdaytimer_timeout():
+func _on_doomsdaytimer_timeout(): # FAILSTATE
 	$youwin.show()
+	global.playerdead = false
+	global.globalworldpop = 1
+	global.ally1global = ""
+	global.selfnuked = false
+	global.startdelay = false
 	print("youwin")
 	
 	
@@ -453,3 +464,7 @@ func _on_allytimer_timeout():
 func allylist():
 	#print(global.ally1global)
 	$allylist.text = str(global.ally1global)
+
+
+func _on_startdelay_timeout():
+	global.startdelay = true
