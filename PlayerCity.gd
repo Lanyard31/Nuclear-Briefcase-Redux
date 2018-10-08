@@ -8,7 +8,6 @@ var gameovercheck = false
 var bonuspop
 
 func _ready():
-	$indicator.play()
 	pass
 	#bonuspop = round(0.5 * population)
 	#population = (population + bonuspop)
@@ -17,19 +16,23 @@ func _ready():
 func _process(delta):
 	if population <= 0 and gameovercheck == false:
 		emit_signal('game_over')
-		$skull.show()
+#		$skull.show()
 		global.playerdead = true
 		gameovercheck = true
-		self.show()
+#		$Sprite.show()
+#		self.show()
 #		$gameover.show()
 		$gameovertimer.start()
 		$gameoversound.play()
 		global.playerdead == true
 		print("game_over")
+	if global.startdelay == true:
+		_indicator()
 
 func _on_Collisionstart_timeout():
 	var b = Player_Collision.instance()
 	add_child(b)
+	print("playercollision")
 
 func _on_gameovertimer_timeout(): #FAILSTATE
 		global.playerdead = false
@@ -42,3 +45,6 @@ func _on_gameovertimer_timeout(): #FAILSTATE
 
 func _on_onedead_timeout():
 	global.globalworldpop -= 1
+
+func _indicator():
+	$indicator.play()

@@ -18,10 +18,25 @@ func _ready():
 	randomize()
 	if worldpop == false:
 		worldpop = true
-	population = int(round(population * rand_range(0.6, 2.4)))
+	population = int(round(population * rand_range(0.6, 1.1)))
 	HPpopfull = population
 	emit_signal('cityinitial', population)
-	$AnimationPlayer.play("citybuild")
+	#self.set_scale
+	
+	$citydelayer.wait_time = rand_range(0.2, 2.3)
+	$citydelayer.start()
+
+	
+	#possibly buggy code
+#	if self.is_in_group("player"):
+#		_on_citydelayer_timeout()
+#		self.set_scale(Vector2(1.0, 1.0))
+#		if self.has_method("_indicator"):
+#			_indicator()
+#			return
+#	else:
+#		$citydelayer.wait_time = rand_range(0.2, 2.3)
+#		$citydelayer.start()
 	#print(population)
 	
 #func _process(delta):
@@ -87,3 +102,7 @@ func _on_cityinitial(population):
 
 func _on_City_cityinitialcancel():
 	global.globalworldpop -= population
+
+
+func _on_citydelayer_timeout():
+	$AnimationPlayer.play("citybuild")

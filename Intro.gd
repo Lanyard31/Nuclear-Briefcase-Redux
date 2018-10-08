@@ -19,6 +19,13 @@ func _process(delta):
 			$entertimer/ESCback.hide()
 			$entertimer/ESC.show()
 			$clicker.play()
+	if Input.is_action_just_pressed("backspace"):
+		if global.mute == false:
+			AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), -100) #mute
+			global.mute = true
+		else:
+			AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 0) #mute
+			global.mute = false
 
 func _on_exit_pressed():
 	$clicker.play()

@@ -94,14 +94,14 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.8, 1.6, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, -4 ),
 "update": 0,
-"values": [ Vector2( 0.1, 0.1 ), Vector2( 0.2, 0.2 ), Vector2( 1.3, 1.3 ), Vector2( 1, 1 ) ]
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 0.2, 0.2 ), Vector2( 1.4, 1.4 ), Vector2( 1, 1 ) ]
 }
 
 [node name="City" type="StaticBody2D"]
 
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.1, 0.1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -110,7 +110,7 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = ExtResource( 2 )
 population = 10000
 
@@ -196,7 +196,7 @@ bus = "Master"
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 3 )
 animation = "default"
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -211,6 +211,13 @@ playback_speed = 1.0
 anims/citybuild = SubResource( 4 )
 blend_times = [  ]
 
+[node name="citydelayer" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
 [connection signal="cityinitial" from="." to="." method="_on_cityinitial"]
 
 [connection signal="cityinitialcancel" from="." to="." method="_on_City_cityinitialcancel"]
@@ -218,5 +225,7 @@ blend_times = [  ]
 [connection signal="progress_update" from="." to="." method="_update_progress"]
 
 [connection signal="animation_finished" from="citydeath" to="." method="_on_citydeath_animation_finished"]
+
+[connection signal="timeout" from="citydelayer" to="." method="_on_citydelayer_timeout"]
 
 

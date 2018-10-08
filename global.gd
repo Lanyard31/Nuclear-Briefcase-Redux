@@ -6,6 +6,7 @@ var howtoplay = 0
 var ally1global = ""
 var selfnuked = false
 var startdelay = false
+var mute = false
 
 func ready():
 	pass

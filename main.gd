@@ -147,11 +147,15 @@ func _ready():
 		
 	for member in ally1members: #blue
 		member.set_modulate(Color(0.0941176470588235, 0.9098039215686275, 0.7137254901960784))
+		member.set_scale(Vector2(0.01, 0.01))
 	for member in ally2members: #red
 		member.set_modulate(Color(0.9098039215686275, 0.0941176470588235, 0.5607843137254902))
+		member.set_scale(Vector2(0.01, 0.01))
 	for member in ally3members: #yellow
 		member.set_modulate(Color(0.9372549019607843, 0.2627450980392157, 0.1058823529411765))
+		member.set_scale(Vector2(0.01, 0.01))
 	$PlayerCity.set_modulate(Color(1, 1, 1))
+	#$PlayerCity.set_scale(Vector2(0.1, 0.1))
 		
 		
 	#add_to_group(ally1)
@@ -177,6 +181,7 @@ func _process(delta):
 #	allygroupchecker()
 	group = null
 	NPCfire()
+	
 	if playercanshoot:
 		if Input.is_action_just_pressed("a"):
 			if Input.is_action_pressed("shift"):
@@ -295,6 +300,14 @@ func _process(delta):
 				fire_missile('ZAMBIA')
 				return
 			fire_missile('zimbabwe')
+			
+		if Input.is_action_just_pressed("backspace"):
+			if global.mute == false:
+				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), -100) #mute
+				global.mute = true
+			else:
+				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 0) #mute
+				global.mute = false
 	
 func NPCfire(): #target acquisition
 	if can_shoot and global.startdelay == true:
