@@ -1127,6 +1127,7 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="youwinsogood" type="TextureRect" parent="." index="12"]
 
+editor/display_folded = true
 visible = false
 modulate = Color( 1, 1, 1, 0.941176 )
 anchor_left = 0.0
@@ -1397,11 +1398,19 @@ autostart = false
 
 [connection signal="timeout" from="ballettimer" to="." method="_on_ballettimer_timeout"]
 
+[connection signal="pressed" from="self_nuke/reset" to="." method="_on_reset_pressed"]
+
 [connection signal="pressed" from="self_nuke/quit" to="." method="_on_quit_pressed"]
+
+[connection signal="pressed" from="gameover/reset" to="." method="_on_reset_pressed"]
 
 [connection signal="pressed" from="gameover/quit" to="." method="_on_quit_pressed"]
 
+[connection signal="pressed" from="youwin/reset" to="." method="_on_reset_pressed"]
+
 [connection signal="pressed" from="youwin/quit" to="." method="_on_quit_pressed"]
+
+[connection signal="pressed" from="youwinsogood/reset" to="." method="_on_reset_pressed"]
 
 [connection signal="pressed" from="youwinsogood/quit" to="." method="_on_quit_pressed"]
 

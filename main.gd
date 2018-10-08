@@ -176,6 +176,7 @@ func _process(delta):
 	if global.playerdead == true:
 		if global.selfnuked == false:
 			$gameover.show()
+			print(global.missilecount)
 			
 	
 	#population updater
@@ -602,3 +603,18 @@ func _on_notdoomsdaytimer_timeout():
 		global.critical = false
 		global.playcritsound = true
 		print("youwin")
+
+
+func _on_reset_pressed():
+	global.globalworldpop = 1
+	global.playerdead = false
+	global.howtoplay = 0
+	global.ally1global = ""
+	global.selfnuked = false
+	global.startdelay = false
+	global.mute = false
+	global.winstate = false
+	global.critical = false
+	global.playcritsound = true
+	global.missilecount
+	get_tree().reload_current_scene()
