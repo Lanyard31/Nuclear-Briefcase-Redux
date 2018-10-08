@@ -16,7 +16,7 @@ var position
 var _position
 var _direction
 var target
-var speed = 2.2
+var speed = 2.1
 var spawncity
 var spawnhere
 var spawnherespot = Vector2()
@@ -51,10 +51,21 @@ var Nations = ["algeria", "AUSTRALIA", "BURKINA_FASO", "brazil", "CHINA", "chile
 
 
 func _ready():
+	global.globalworldpop = 1
+	global.playerdead = false
+	global.howtoplay = 0
+	global.ally1global = ""
+	global.selfnuked = false
+	global.startdelay = false
+	global.winstate = false
+	
+	
 	#$GunTimer.wait_time = rand_range(0.5, 3)
 	
 	worldpopulationdisplayinit = str(global.globalworldpop)
 	$pop.text = (worldpopulationdisplayinit + "0k")
+	
+	$allylist.set_modulate(Color(0.0941176470588235, 0.9098039215686275, 0.7137254901960784))
 	
 	$Worldmap/AnimationPlayer.play("fuzzy")#Randomly choose a nation location for the player to spawn at, disable NPCity there
 	randomize()
@@ -191,11 +202,17 @@ func _process(delta):
 		if global.selfnuked == false:
 			$gameover.show()
 	
-	#population updater
-	if global.globalworldpop <= 0:
-		$pop.hide()
-	worldpopulationdisplay = str(global.globalworldpop)
-	$pop.text = (worldpopulationdisplay + "0k")
+	#population updater :  IS it here?
+	#if global.globalworldpop <= 0:
+	#	$pop.hide()
+	
+	if global.globalworldpop >= 100000:
+		worldpopulationdisplay = str(global.globalworldpop)
+		$pop.text = (worldpopulationdisplay + "0k")
+		$pop.set_modulate(Color(1, 1, 1))
+	else:
+		$pop.text = ("critical")
+		$pop.set_modulate(Color(0.9098039215686275, 0.0941176470588235, 0.5607843137254902))
 	
 	
 #	$GunTimer.wait_time = rand_range(0.5, 3)
@@ -322,6 +339,7 @@ func _process(delta):
 				return
 			fire_missile('zimbabwe')
 			
+			
 		if Input.is_action_just_pressed("backspace"):
 			if global.mute == false:
 				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), -100) #mute
@@ -329,6 +347,13 @@ func _process(delta):
 			else:
 				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), 0) #mute
 				global.mute = false
+				
+				
+		if Input.is_action_just_pressed("enter"):
+			if global.winstate == true:
+				global.winstate = false
+				global.globalworldpop = 1 #part of youwin globals
+				get_tree().reload_current_scene()
 	
 func NPCfire(): #target acquisition
 	if can_shoot and global.startdelay == true:
@@ -447,6 +472,7 @@ func fire_missile(_target): # firing code for player
 		dir = (target.global_position - ($PlayerCity/Muzzle.global_position)).normalized() * speed
 	if dir == Vector2(0, 0): #This means you nuked yourself
 		$self_nuke.show()
+		$selfnukeboom.play()
 		global.selfnuked = true
 		playercanshoot = false
 		$playerloss.play()
@@ -486,13 +512,14 @@ func _on_ballettimer_timeout():
 	pass
 	
 func _on_selfnuketimer_timeout():
-	global.playerdead = false
-	global.globalworldpop = 1
-	global.ally1global = ""
-	global.selfnuked = false
-	global.startdelay = false
-	get_tree().reload_current_scene()
-	
+		global.playerdead == true
+		global.playerdead = false
+		global.globalworldpop = 1
+		global.ally1global = ""
+		global.selfnuked = false
+		global.startdelay = false
+		get_tree().reload_current_scene()
+		
 
 func _on_doomsdaytimer_timeout(): # FAILSTATE
 	$youwin.show()
@@ -501,6 +528,7 @@ func _on_doomsdaytimer_timeout(): # FAILSTATE
 	global.ally1global = ""
 	global.selfnuked = false
 	global.startdelay = false
+	global.winstate = true
 	print("youwin")
 	
 	
@@ -514,6 +542,7 @@ func allylist():
 
 func _on_startdelay_timeout():
 	global.startdelay = true
+	$Worldmap/AnimationPlayer.play("mutefade")
 
 
 func _on_Randtimer_timeout():
@@ -525,3 +554,7 @@ func _on_Randtimer_timeout():
 # new randtime
 # randtimer variable is false
 
+
+func _on_quit_pressed():
+	if global.winstate == true:
+		get_tree().quit()

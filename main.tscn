@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=104 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://PlayerNuke.tscn" type="PackedScene" id=2]
@@ -58,8 +58,43 @@
 [ext_resource path="res://assets/assets_new/popups/popups/window_lose.png" type="Texture" id=56]
 [ext_resource path="res://assets/assets_new/popups/popups/start_READYGO.png" type="Texture" id=57]
 [ext_resource path="res://assets/assets_new/popups/popups/window_victory.png" type="Texture" id=58]
-[ext_resource path="res://assets/assets_new/Square.ttf" type="DynamicFontData" id=59]
-[ext_resource path="res://assets/last/ICON_MUTE.png" type="Texture" id=60]
+[ext_resource path="res://assets/assets_new/popups/popups/window_restart-button-neutral.png" type="Texture" id=59]
+[ext_resource path="res://assets/assets_new/popups/popups/window_quit-button-neutral.png" type="Texture" id=60]
+[ext_resource path="res://assets/assets_new/Square.ttf" type="DynamicFontData" id=61]
+[ext_resource path="res://assets/last/ICON_MUTE.png" type="Texture" id=62]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00000.png" type="Texture" id=63]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00001.png" type="Texture" id=64]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00002.png" type="Texture" id=65]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00003.png" type="Texture" id=66]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00004.png" type="Texture" id=67]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00005.png" type="Texture" id=68]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00006.png" type="Texture" id=69]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00007.png" type="Texture" id=70]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00008.png" type="Texture" id=71]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00009.png" type="Texture" id=72]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00010.png" type="Texture" id=73]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00011.png" type="Texture" id=74]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00012.png" type="Texture" id=75]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00013.png" type="Texture" id=76]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00014.png" type="Texture" id=77]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00015.png" type="Texture" id=78]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00016.png" type="Texture" id=79]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00017.png" type="Texture" id=80]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00018.png" type="Texture" id=81]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00019.png" type="Texture" id=82]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00020.png" type="Texture" id=83]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00021.png" type="Texture" id=84]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00022.png" type="Texture" id=85]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00023.png" type="Texture" id=86]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00024.png" type="Texture" id=87]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00025.png" type="Texture" id=88]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00026.png" type="Texture" id=89]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00027.png" type="Texture" id=90]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00028.png" type="Texture" id=91]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00029.png" type="Texture" id=92]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00030.png" type="Texture" id=93]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00031.png" type="Texture" id=94]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00032.png" type="Texture" id=95]
 
 [sub_resource type="Animation" id=1]
 
@@ -116,6 +151,25 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0.674039 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=7]
+
+resource_name = "mutefade"
+length = 6.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("../muteicon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [sub_resource type="AudioStreamRandomPitch" id=2]
 
 audio_stream = ExtResource( 52 )
@@ -126,7 +180,7 @@ random_pitch = 1.1
 size = 0
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 59 )
+font_data = ExtResource( 61 )
 _sections_unfolded = [ "Font" ]
 
 [sub_resource type="DynamicFont" id=4]
@@ -134,7 +188,7 @@ _sections_unfolded = [ "Font" ]
 size = 10
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 59 )
+font_data = ExtResource( 61 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=5]
@@ -142,7 +196,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 59 )
+font_data = ExtResource( 61 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=6]
@@ -150,8 +204,17 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 15
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 59 )
+font_data = ExtResource( 61 )
 _sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="SpriteFrames" id=8]
+
+animations = [ {
+"frames": [ ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ) ],
+"loop": false,
+"name": "default",
+"speed": 24.0
+} ]
 
 [node name="Root" type="Node" index="0"]
 
@@ -177,6 +240,7 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/fuzzy = SubResource( 1 )
+anims/mutefade = SubResource( 7 )
 blend_times = [  ]
 
 [node name="border" type="Sprite" parent="Worldmap" index="1"]
@@ -906,6 +970,56 @@ size_flags_vertical = 1
 texture = ExtResource( 58 )
 stretch_mode = 3
 _sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="reset" type="TextureButton" parent="youwin" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 402.0
+margin_right = 538.0
+margin_bottom = 502.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 59 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="quit" type="TextureButton" parent="youwin" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 568.0
+margin_top = 402.0
+margin_right = 971.0
+margin_bottom = 502.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 60 )
+_sections_unfolded = [ "Textures" ]
 
 [node name="selfnuketimer" type="Timer" parent="." index="12"]
 
@@ -917,7 +1031,7 @@ autostart = false
 [node name="doomsdaytimer" type="Timer" parent="." index="13"]
 
 process_mode = 1
-wait_time = 10.0
+wait_time = 9.0
 one_shot = false
 autostart = false
 
@@ -927,9 +1041,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 20.0
+margin_left = 31.0
 margin_top = 764.0
-margin_right = 196.0
+margin_right = 207.0
 margin_bottom = 779.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -950,7 +1064,7 @@ scroll_active = true
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Rect" ]
 
 [node name="allyheader" type="RichTextLabel" parent="." index="15"]
 
@@ -958,9 +1072,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 175.0
+margin_left = 183.0
 margin_top = 764.0
-margin_right = 351.0
+margin_right = 359.0
 margin_bottom = 779.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -1052,8 +1166,10 @@ autostart = true
 
 [node name="muteicon" type="Sprite" parent="." index="21"]
 
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 1794.23, 51.2636 )
-texture = ExtResource( 60 )
+texture = ExtResource( 62 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Randtimer" type="Timer" parent="." index="22"]
 
@@ -1061,6 +1177,12 @@ process_mode = 1
 wait_time = 0.01
 one_shot = false
 autostart = true
+
+[node name="selfnukeboom" type="AnimatedSprite" parent="." index="23"]
+
+frames = SubResource( 8 )
+animation = "default"
+centered = false
 
 [connection signal="redshoot" from="." to="." method="_on_redshoot"]
 
@@ -1071,6 +1193,8 @@ autostart = true
 [connection signal="timeout" from="GunTimer2" to="." method="_on_GunTimer_timeout"]
 
 [connection signal="timeout" from="ballettimer" to="." method="_on_ballettimer_timeout"]
+
+[connection signal="pressed" from="youwin/quit" to="." method="_on_quit_pressed"]
 
 [connection signal="timeout" from="selfnuketimer" to="." method="_on_selfnuketimer_timeout"]
 

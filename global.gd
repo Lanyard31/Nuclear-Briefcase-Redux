@@ -7,6 +7,7 @@ var ally1global = ""
 var selfnuked = false
 var startdelay = false
 var mute = false
+var winstate = false
 
 func ready():
 	pass

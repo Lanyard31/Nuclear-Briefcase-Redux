@@ -119,6 +119,7 @@ disabled = true
 
 [node name="Sprite" parent="." index="1"]
 
+z_index = -3
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 

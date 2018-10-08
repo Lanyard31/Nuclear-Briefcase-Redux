@@ -14,7 +14,7 @@ var deadpop
 var worldpopulationdisplayinit
 signal cityinitialcancel
 var ally1bonus = 5 #this is a multiplier
-var playerbonuspop = 5 #this is a multiplier
+var playerbonuspop = 5 #this is a multiplier, best at 5
 
 func _ready():
 	$popcatch.start()
@@ -89,17 +89,6 @@ func _on_citydeath_animation_finished():
 	hide()
 
 
-func _on_cityinitial(population):
-	global.globalworldpop += population
-#	print(str(global.globalworldpop))
-
-
-func _on_City_cityinitialcancel():
-	global.globalworldpop -= population
-
-
-func _on_citydelayer_timeout():
-	$AnimationPlayer.play("citybuild")
 
 
 func _on_popcatch_timeout():
@@ -112,8 +101,20 @@ func _on_popcatch_timeout():
 		population = int(round(population * playerbonuspop))
 	HPpopfull = population
 	emit_signal('cityinitial', population)
-	print(population)
+	#print(population)
 	#self.set_scale
 	
 	$citydelayer.wait_time = rand_range(0.2, 2.3)
 	$citydelayer.start()
+
+func _on_cityinitial(population):
+	global.globalworldpop += population
+#	print(str(global.globalworldpop))
+
+
+func _on_City_cityinitialcancel():
+	global.globalworldpop -= population
+
+
+func _on_citydelayer_timeout():
+	$AnimationPlayer.play("citybuild")
