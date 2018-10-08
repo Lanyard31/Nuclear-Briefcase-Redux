@@ -194,7 +194,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0.1, 0.1 ), Vector2( 0.2, 0.2 ), Vector2( 1.4, 1.4 ), Vector2( 1, 1 ) ]
 }
 
-[node name="City" type="StaticBody2D"]
+[node name="City" type="StaticBody2D" index="0"]
 
 scale = Vector2( 0.1, 0.1 )
 input_pickable = false
@@ -206,6 +206,9 @@ friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
 Skull = ExtResource( 2 )
 population = 1000
 

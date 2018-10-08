@@ -42,6 +42,7 @@ func _on_gameovertimer_timeout(): #FAILSTATE
 		global.ally1global = ""
 		global.selfnuked = false
 		global.startdelay = false
+		global.critical = false
 		get_tree().reload_current_scene()
 
 

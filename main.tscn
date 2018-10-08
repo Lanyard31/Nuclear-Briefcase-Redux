@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=2]
+[gd_scene load_steps=108 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://PlayerNuke.tscn" type="PackedScene" id=2]
@@ -60,41 +60,45 @@
 [ext_resource path="res://assets/assets_new/popups/popups/window_victory.png" type="Texture" id=58]
 [ext_resource path="res://assets/assets_new/popups/popups/window_restart-button-neutral.png" type="Texture" id=59]
 [ext_resource path="res://assets/assets_new/popups/popups/window_quit-button-neutral.png" type="Texture" id=60]
-[ext_resource path="res://assets/assets_new/Square.ttf" type="DynamicFontData" id=61]
-[ext_resource path="res://assets/last/ICON_MUTE.png" type="Texture" id=62]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00000.png" type="Texture" id=63]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00001.png" type="Texture" id=64]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00002.png" type="Texture" id=65]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00003.png" type="Texture" id=66]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00004.png" type="Texture" id=67]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00005.png" type="Texture" id=68]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00006.png" type="Texture" id=69]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00007.png" type="Texture" id=70]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00008.png" type="Texture" id=71]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00009.png" type="Texture" id=72]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00010.png" type="Texture" id=73]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00011.png" type="Texture" id=74]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00012.png" type="Texture" id=75]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00013.png" type="Texture" id=76]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00014.png" type="Texture" id=77]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00015.png" type="Texture" id=78]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00016.png" type="Texture" id=79]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00017.png" type="Texture" id=80]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00018.png" type="Texture" id=81]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00019.png" type="Texture" id=82]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00020.png" type="Texture" id=83]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00021.png" type="Texture" id=84]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00022.png" type="Texture" id=85]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00023.png" type="Texture" id=86]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00024.png" type="Texture" id=87]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00025.png" type="Texture" id=88]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00026.png" type="Texture" id=89]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00027.png" type="Texture" id=90]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00028.png" type="Texture" id=91]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00029.png" type="Texture" id=92]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00030.png" type="Texture" id=93]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00031.png" type="Texture" id=94]
-[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00032.png" type="Texture" id=95]
+[ext_resource path="res://assets/assets_new/popups/popups/window_triumph.png" type="Texture" id=61]
+[ext_resource path="res://assets/assets_new/popups/popups/window_restart-button-good.png" type="Texture" id=62]
+[ext_resource path="res://assets/assets_new/popups/popups/window_quit-button-good.png" type="Texture" id=63]
+[ext_resource path="res://assets/assets_new/Square.ttf" type="DynamicFontData" id=64]
+[ext_resource path="res://assets/last/ICON_MUTE.png" type="Texture" id=65]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00000.png" type="Texture" id=66]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00001.png" type="Texture" id=67]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00002.png" type="Texture" id=68]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00003.png" type="Texture" id=69]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00004.png" type="Texture" id=70]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00005.png" type="Texture" id=71]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00006.png" type="Texture" id=72]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00007.png" type="Texture" id=73]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00008.png" type="Texture" id=74]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00009.png" type="Texture" id=75]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00010.png" type="Texture" id=76]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00011.png" type="Texture" id=77]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00012.png" type="Texture" id=78]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00013.png" type="Texture" id=79]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00014.png" type="Texture" id=80]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00015.png" type="Texture" id=81]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00016.png" type="Texture" id=82]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00017.png" type="Texture" id=83]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00018.png" type="Texture" id=84]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00019.png" type="Texture" id=85]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00020.png" type="Texture" id=86]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00021.png" type="Texture" id=87]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00022.png" type="Texture" id=88]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00023.png" type="Texture" id=89]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00024.png" type="Texture" id=90]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00025.png" type="Texture" id=91]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00026.png" type="Texture" id=92]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00027.png" type="Texture" id=93]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00028.png" type="Texture" id=94]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00029.png" type="Texture" id=95]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00030.png" type="Texture" id=96]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00031.png" type="Texture" id=97]
+[ext_resource path="res://assets/assets_new/white-fade/white-fade/white-fade_00032.png" type="Texture" id=98]
+[ext_resource path="res://assets/sounds/powerup.wav" type="AudioStream" id=99]
 
 [sub_resource type="Animation" id=1]
 
@@ -180,7 +184,7 @@ random_pitch = 1.1
 size = 0
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 61 )
+font_data = ExtResource( 64 )
 _sections_unfolded = [ "Font" ]
 
 [sub_resource type="DynamicFont" id=5]
@@ -188,7 +192,7 @@ _sections_unfolded = [ "Font" ]
 size = 10
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 61 )
+font_data = ExtResource( 64 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=6]
@@ -196,7 +200,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 61 )
+font_data = ExtResource( 64 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=7]
@@ -204,13 +208,13 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 15
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 61 )
+font_data = ExtResource( 64 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="SpriteFrames" id=8]
 
 animations = [ {
-"frames": [ ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ) ],
+"frames": [ ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ) ],
 "loop": false,
 "name": "default",
 "speed": 24.0
@@ -265,8 +269,6 @@ autostart = false
 
 [node name="Nations" type="Node" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="algeria" parent="Nations" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 896.612, 532.512 )
@@ -308,7 +310,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="BURKINA_FASO" parent="Nations" index="3" instance=ExtResource( 6 )]
 
-position = Vector2( 759.616, 667.053 )
+position = Vector2( 794.957, 640.785 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -321,7 +323,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="FINLAND" parent="Nations" index="4" instance=ExtResource( 6 )]
 
-position = Vector2( 1037.94, 130.585 )
+position = Vector2( 1032.63, 126.604 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -347,7 +349,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="CHINA" parent="Nations" index="6" instance=ExtResource( 6 )]
 
-position = Vector2( 1532.79, 407.799 )
+position = Vector2( 1537.68, 410.243 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -373,7 +375,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="DENMARK" parent="Nations" index="8" instance=ExtResource( 6 )]
 
-position = Vector2( 901.365, 241.803 )
+position = Vector2( 906.769, 236.399 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -399,7 +401,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="EGYPT" parent="Nations" index="10" instance=ExtResource( 6 )]
 
-position = Vector2( 1055.1, 573.998 )
+position = Vector2( 1069.88, 573.276 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -412,7 +414,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="england" parent="Nations" index="11" instance=ExtResource( 6 )]
 
-position = Vector2( 783.438, 293.338 )
+position = Vector2( 786.14, 280.369 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -425,7 +427,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="GERMANY" parent="Nations" index="12" instance=ExtResource( 6 )]
 
-position = Vector2( 886.081, 316.749 )
+position = Vector2( 888.295, 311.503 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -438,7 +440,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="ghana" parent="Nations" index="13" instance=ExtResource( 6 )]
 
-position = Vector2( 830.236, 710.732 )
+position = Vector2( 853.157, 706.831 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -490,7 +492,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="israel" parent="Nations" index="17" instance=ExtResource( 6 )]
 
-position = Vector2( 1149.92, 520.904 )
+position = Vector2( 1154.56, 508.299 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -542,7 +544,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="kazakhstan" parent="Nations" index="21" instance=ExtResource( 6 )]
 
-position = Vector2( 1438.19, 302.98 )
+position = Vector2( 1392.41, 318.239 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -555,7 +557,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="LESOTHO" parent="Nations" index="22" instance=ExtResource( 6 )]
 
-position = Vector2( 1011.02, 970.693 )
+position = Vector2( 1026, 1008 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -581,7 +583,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="MADAGASCAR" parent="Nations" index="24" instance=ExtResource( 6 )]
 
-position = Vector2( 1195.25, 942.738 )
+position = Vector2( 1191.67, 922.304 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -620,7 +622,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="norway" parent="Nations" index="27" instance=ExtResource( 6 )]
 
-position = Vector2( 897.476, 148.464 )
+position = Vector2( 908.502, 143.318 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -659,7 +661,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="panama" parent="Nations" index="30" instance=ExtResource( 6 )]
 
-position = Vector2( 337.126, 628.83 )
+position = Vector2( 339.077, 625.904 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -685,7 +687,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="ROMANIA" parent="Nations" index="32" instance=ExtResource( 6 )]
 
-position = Vector2( 1042.03, 376.331 )
+position = Vector2( 1083.84, 367.088 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -711,7 +713,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="switzerland" parent="Nations" index="34" instance=ExtResource( 6 )]
 
-position = Vector2( 940.627, 361.903 )
+position = Vector2( 930.874, 377.996 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -737,7 +739,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="turkey" parent="Nations" index="36" instance=ExtResource( 6 )]
 
-position = Vector2( 1117.06, 446.698 )
+position = Vector2( 1226.52, 426.132 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -815,7 +817,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="ZAMBIA" parent="Nations" index="42" instance=ExtResource( 6 )]
 
-position = Vector2( 1034.72, 847.063 )
+position = Vector2( 1033.29, 867.138 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -828,7 +830,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="zimbabwe" parent="Nations" index="43" instance=ExtResource( 6 )]
 
-position = Vector2( 1085.2, 899.563 )
+position = Vector2( 1068.71, 925.015 )
 scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 Skull = null
@@ -951,6 +953,7 @@ _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="youwin" type="TextureRect" parent="." index="11"]
 
+editor/display_folded = true
 visible = false
 modulate = Color( 1, 1, 1, 0.941176 )
 anchor_left = 0.0
@@ -1021,21 +1024,93 @@ group = null
 texture_normal = ExtResource( 60 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="selfnuketimer" type="Timer" parent="." index="12"]
+[node name="youwinsogood" type="TextureRect" parent="." index="12"]
+
+visible = false
+modulate = Color( 1, 1, 1, 0.941176 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 475.0
+margin_top = 350.0
+margin_right = 1445.0
+margin_bottom = 729.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 61 )
+stretch_mode = 3
+_sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="reset" type="TextureButton" parent="youwinsogood" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 402.0
+margin_right = 538.0
+margin_bottom = 502.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 62 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="quit" type="TextureButton" parent="youwinsogood" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 568.0
+margin_top = 402.0
+margin_right = 971.0
+margin_bottom = 502.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 63 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="selfnuketimer" type="Timer" parent="." index="13"]
 
 process_mode = 1
 wait_time = 8.0
 one_shot = true
 autostart = false
 
-[node name="doomsdaytimer" type="Timer" parent="." index="13"]
+[node name="doomsdaytimer" type="Timer" parent="." index="14"]
 
 process_mode = 1
 wait_time = 8.0
 one_shot = false
 autostart = false
 
-[node name="popcounter" type="RichTextLabel" parent="." index="14"]
+[node name="popcounter" type="RichTextLabel" parent="." index="15"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1066,7 +1141,7 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "Rect" ]
 
-[node name="allyheader" type="RichTextLabel" parent="." index="15"]
+[node name="allyheader" type="RichTextLabel" parent="." index="16"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1097,7 +1172,7 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="pop" type="Label" parent="." index="16"]
+[node name="pop" type="Label" parent="." index="17"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1120,21 +1195,21 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Poptimer" type="Timer" parent="." index="17"]
+[node name="Poptimer" type="Timer" parent="." index="18"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = false
 
-[node name="allytimer" type="Timer" parent="." index="18"]
+[node name="allytimer" type="Timer" parent="." index="19"]
 
 process_mode = 1
 wait_time = 0.1
 one_shot = true
 autostart = true
 
-[node name="allylist" type="Label" parent="." index="19"]
+[node name="allylist" type="Label" parent="." index="20"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1157,32 +1232,44 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="startdelay" type="Timer" parent="." index="20"]
+[node name="startdelay" type="Timer" parent="." index="21"]
 
 process_mode = 1
 wait_time = 3.7
 one_shot = true
 autostart = true
 
-[node name="muteicon" type="Sprite" parent="." index="21"]
+[node name="muteicon" type="Sprite" parent="." index="22"]
 
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 1794.23, 51.2636 )
-texture = ExtResource( 62 )
+texture = ExtResource( 65 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Randtimer" type="Timer" parent="." index="22"]
+[node name="Randtimer" type="Timer" parent="." index="23"]
 
 process_mode = 1
 wait_time = 0.01
 one_shot = false
 autostart = true
 
-[node name="selfnukeboom" type="AnimatedSprite" parent="." index="23"]
+[node name="selfnukeboom" type="AnimatedSprite" parent="." index="24"]
 
+position = Vector2( 15.5476, 15.8112 )
 frames = SubResource( 8 )
 animation = "default"
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="cake" type="AudioStreamPlayer" parent="." index="25"]
+
+stream = ExtResource( 99 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="redshoot" from="." to="." method="_on_redshoot"]
 
@@ -1195,6 +1282,8 @@ centered = false
 [connection signal="timeout" from="ballettimer" to="." method="_on_ballettimer_timeout"]
 
 [connection signal="pressed" from="youwin/quit" to="." method="_on_quit_pressed"]
+
+[connection signal="pressed" from="youwinsogood/quit" to="." method="_on_quit_pressed"]
 
 [connection signal="timeout" from="selfnuketimer" to="." method="_on_selfnuketimer_timeout"]
 

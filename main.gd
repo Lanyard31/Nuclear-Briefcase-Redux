@@ -58,6 +58,7 @@ func _ready():
 	global.selfnuked = false
 	global.startdelay = false
 	global.winstate = false
+	global.critical = false
 	
 	
 	#$GunTimer.wait_time = rand_range(0.5, 3)
@@ -67,7 +68,9 @@ func _ready():
 	
 	$allylist.set_modulate(Color(0.0941176470588235, 0.9098039215686275, 0.7137254901960784))
 	
-	$Worldmap/AnimationPlayer.play("fuzzy")#Randomly choose a nation location for the player to spawn at, disable NPCity there
+	$Worldmap/AnimationPlayer.play("fuzzy")
+	
+	#Randomly choose a nation location for the player to spawn at, disable NPCity there
 	randomize()
 	var spawncity = Nations[(randi() % Nations.size() - 2)]
 	print("Player Spawned:", spawncity) 
@@ -83,13 +86,14 @@ func _ready():
 	$PlayerCity.add_to_group('player')
 	spawnherecollisionremove = 'Nations'.plus_file(spawncity).plus_file('CollisionShape2D')
 	get_node(spawnherecollisionremove).queue_free()
+	
 	#use a dictionary
 	#concatenate a path target = 'Nations'.plus_file(_target).plus_file('Muzzle')
 	#navigate to Nations tree 
 	#queuefree a Nation
 	#Create PlayerCity node
 	
-	#Zambia and Zimbabwe make sure ally2 and ally3 have one member to prevent division by zero
+	#Previously, Zambia and Zimbabwe made sure ally2 and ally3 have one member to prevent division by zero during testing
 	#ally_assigner = 'Nations'.plus_file('ZAMBIA')
 	#ally_assigner = get_node(ally_assigner)
 	#ally_assigner.add_to_group('ally2')
@@ -487,18 +491,32 @@ func _on_selfnuketimer_timeout():
 		global.ally1global = ""
 		global.selfnuked = false
 		global.startdelay = false
+		global.critical = false
 		get_tree().reload_current_scene()
 		
 
-func _on_doomsdaytimer_timeout(): # FAILSTATE
-	$youwin.show()
-	global.playerdead = false
-	global.globalworldpop = 1
-	global.ally1global = ""
-	global.selfnuked = false
-	global.startdelay = false
-	global.winstate = true
-	print("youwin")
+func _on_doomsdaytimer_timeout(): # FAILSTATE, sort of its winning
+	if global.critical == true:
+		$youwin.show()
+		global.playerdead = false
+		global.globalworldpop = 1
+		global.ally1global = ""
+		global.selfnuked = false
+		global.startdelay = false
+		global.winstate = true
+		global.critical = false
+		print("youwin")
+		
+	if global.critical == false: # so good -- really winning
+		$youwinsogood.show()
+		$cake.play()
+		global.playerdead = false
+		global.ally1global = ""
+		global.selfnuked = false
+		global.startdelay = false
+		global.winstate = true
+		global.critical = false
+		print("youwin")
 	
 	
 func _on_allytimer_timeout():

@@ -8,6 +8,7 @@ var selfnuked = false
 var startdelay = false
 var mute = false
 var winstate = false
+var critical = false
 
 func ready():
 	pass
