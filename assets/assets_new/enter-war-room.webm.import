@@ -1,0 +1,17 @@
+[remap]
+
+importer="Webm"
+type="VideoStreamWebm"
+path="res://.import/enter-war-room.webm-fdff8a995b3647554e397656a532c316.webmstr"
+
+[deps]
+
+source_file="res://assets/assets_new/enter-war-room.webm"
+source_md5="a5f1eb11d83cfe01996d8204781b94b4"
+
+dest_files=[ "res://.import/enter-war-room.webm-fdff8a995b3647554e397656a532c316.webmstr" ]
+dest_md5="0c24544e866fed97f050e9da77168b50"
+
+[params]
+
+loop=true

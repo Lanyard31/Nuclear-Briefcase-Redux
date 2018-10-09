@@ -3,7 +3,7 @@ extends Node
 var entervar = false
 
 func _ready():
-	pass
+	$bootup.play()
 
 func _process(delta):
 	if Input.is_action_just_pressed("esc"):
@@ -48,6 +48,8 @@ func _on_entertimer_timeout():
 	entervar = true
 	
 func _on_enter_pressed():
+	$enterwar.show()
+	$enterwar.play()
 	$enterwar.show()
 	$enterwar.play()
 	$microtransition.start()

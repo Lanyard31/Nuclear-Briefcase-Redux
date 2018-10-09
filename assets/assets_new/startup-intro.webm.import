@@ -1,0 +1,17 @@
+[remap]
+
+importer="Webm"
+type="VideoStreamWebm"
+path="res://.import/startup-intro.webm-e5971348ef1dbab66369256839e39871.webmstr"
+
+[deps]
+
+source_file="res://assets/assets_new/startup-intro.webm"
+source_md5="dc0ccfeb28dcf8d55357dfecd0c7e394"
+
+dest_files=[ "res://.import/startup-intro.webm-e5971348ef1dbab66369256839e39871.webmstr" ]
+dest_md5="cdc207bb0895f68355bfa00355020b4d"
+
+[params]
+
+loop=true
